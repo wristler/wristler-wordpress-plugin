@@ -1,0 +1,19 @@
+{
+  "name": "wristler/wristler-wordpress-plugin",
+  "description": "This plug-in enables you to sync your stock with Wristler.",
+  "type": "wordpress-plugin",
+  "autoload": {
+    "psr-4": {
+      "Wristler\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Jeffrey Ponsen",
+      "email": "jeffrey@every-day.nl"
+    }
+  ],
+  "require": {
+    "php": "^7.4"
+  }
+}

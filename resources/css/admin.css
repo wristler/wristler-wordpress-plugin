@@ -1,0 +1,15 @@
+#woocommerce-product-data ul.wc-tabs li.wristler_options a {
+    padding-left: 24px;
+}
+
+#woocommerce-product-data ul.wc-tabs li.wristler_options a::before {
+    content: "";
+    background: url('../images/wristler-icon.png') no-repeat center center;
+    width: 14px;
+    left: 10px;
+    top: 12px;
+    height: 14px;
+    display: block;
+    background-size: contain;
+    position: absolute;
+}
