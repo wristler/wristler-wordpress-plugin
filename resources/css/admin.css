@@ -13,3 +13,126 @@
     background-size: contain;
     position: absolute;
 }
+
+#wristler-autocomplete-results {
+    margin: 0 10px 30px 160px;
+    width: 50%;
+}
+
+#wristler-autocomplete-results li {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#wristler-autocomplete-results li a {
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 4px;
+    display: block;
+    border: 1px solid #8c8f94;
+}
+
+#wristler-autocomplete-results li a.is-active {
+    color: #043959;
+    box-shadow: 0 0 0 1px #4f94d4, 0 0 2px 1px rgb(79 148 212 / 80%);
+    outline: 1px solid transparent;
+}
+
+#wristler-autocomplete-results li a h4 {
+    margin: 0;
+}
+
+#wristler-autocomplete-results li a h4 small {
+    font-size: 10px;
+    opacity: .6;
+}
+
+#wristler-autocomplete-results li a p {
+    margin: 0;
+    padding: 0;
+}
+
+.wristler-selected-watch-container {
+    display: none;
+    border-top: 1px solid #e6e6e6;
+    margin-bottom: 30px;
+}
+
+.wristler-selected-watch-container small {
+    font-size: 10px;
+    opacity: .6;
+}
+
+.wristler-selected-watch-container > div {
+    border: 1px solid #e6e6e6;
+    margin: 30px 10px 0 160px;
+    width: 50%;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.wristler-selected-watch-container > div h3,
+.wristler-selected-watch-container > div h4,
+.wristler-selected-watch-container > div p {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.wristler-selected-watch-container > div h3 {
+    margin-bottom: 10px !important;
+}
+
+._wristler_selected_id_field {
+    display: none;
+}
+
+.wristler-indent-left {
+    margin-left: 160px;
+}
+
+._wristler_description_field textarea {
+    height: 140px !important;
+}
+
+/*.wristler_fields .is-loading {*/
+/*    position: relative;*/
+/*    display: block;*/
+/*}*/
+
+/*.wristler_fields .is-loading::after {*/
+/*    position: absolute;*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*    background: red;*/
+/*    display: block;*/
+/*    z-index: 2;*/
+/*    content: '';*/
+/*    right: 0;*/
+/*    top: 0;*/
+/*}*/
+
+.wristler-autocomplete-loader {
+    display: none;
+    margin: 0 10px 30px 160px;
+    width: 50%;
+}
+
+.wristler-autocomplete-loader li {
+    display: block;
+    margin-bottom: 5px;
+    height: 75px;
+    border-radius: 4px;
+    animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite;
+    background: linear-gradient(-90deg, #efefef 0%, #dfdfdf 50%, #efefef 100%);
+    background-size: 400% 400%;
+}
+
+@keyframes pulse {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -135% 0;
+    }
+}
