@@ -13,6 +13,8 @@ Developer:    Jeffrey Ponsen <jeffrey@every-day.nl>
 
 namespace Wristler;
 
+use Wristler\Rest\Rest;
+
 if (!defined('WRISTLER_PLUGIN_PATH')) {
     define('WRISTLER_PLUGIN_PATH', dirname(__FILE__));
 }
@@ -38,6 +40,8 @@ class Wristler
 
     protected $woocommerce;
 
+    protected $rest;
+
     public static function get(): self
     {
         if (null === self::$instance) {
@@ -53,6 +57,7 @@ class Wristler
         $this->updater = new Updater();
         $this->assets = new Assets();
         $this->woocommerce = new WooCommerce();
+        $this->rest = new Rest();
     }
 
     public static function install() {}

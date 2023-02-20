@@ -7,6 +7,10 @@ class Tabs
 
     public function __construct()
     {
+        if (!isset(get_option('woocommerce_wristler_settings')['wristler_security_token'])) {
+            return;
+        }
+
         add_filter('woocommerce_product_data_tabs', [$this, 'addAdditionalTab']);
         add_filter('woocommerce_product_data_panels', [$this, 'renderAdditionalTab']);
     }
@@ -129,7 +133,7 @@ class Tabs
         woocommerce_wp_checkbox(
             [
                 'id' => '_wristler_box',
-                'value' => get_post_meta(get_the_ID(), '_wristler_box', true) ? 'yes' : 'no',
+                'value' => get_post_meta(get_the_ID(), '_wristler_box', true) === 'yes' ? 'yes' : 'no',
                 'label' => __('Box', 'wristler'),
                 'description' => __('Includes original box', 'wristler')
             ]
@@ -138,7 +142,7 @@ class Tabs
         woocommerce_wp_checkbox(
             [
                 'id' => '_wristler_papers',
-                'value' => get_post_meta(get_the_ID(), '_wristler_papers', true) ? 'yes' : 'no',
+                'value' => get_post_meta(get_the_ID(), '_wristler_papers', true) === 'yes' ? 'yes' : 'no',
                 'label' => __('Papers', 'wristler'),
                 'description' => __('Includes papers/certificate', 'wristler')
             ]
@@ -147,7 +151,7 @@ class Tabs
         woocommerce_wp_checkbox(
             [
                 'id' => '_wristler_warranty',
-                'value' => get_post_meta(get_the_ID(), '_wristler_warranty', true) ? 'yes' : 'no',
+                'value' => get_post_meta(get_the_ID(), '_wristler_warranty', true) === 'yes' ? 'yes' : 'no',
                 'label' => __('Warranty', 'wristler'),
                 'description' => __('Includes warranty', 'wristler')
             ]
@@ -156,7 +160,7 @@ class Tabs
         woocommerce_wp_textarea_input(array(
             'id' => '_wristler_description',
             'label' => __('Description', 'wristler'),
-            'value' => get_post_meta(get_the_ID(), '_wristler_description', true) ?: wp_strip_all_tags(get_the_content(get_the_ID())),
+            'value' => get_post_meta(get_the_ID(), 'c', true) ?: wp_strip_all_tags(get_the_content(get_the_ID())),
             'rows' => 5,
         ));
 

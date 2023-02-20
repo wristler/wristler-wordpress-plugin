@@ -152,7 +152,7 @@ const Wrislter = {
         let tags = ['category', 'gender', 'movement', 'caseSize', 'dial'].map(tag => {
             return watch[tag] && watch[tag].length > 0 ? watch[tag] : null;
         }).filter(tag => tag !== null);
-        
+
         return {
             id: watch.uuid,
             reference: watch.reference,
