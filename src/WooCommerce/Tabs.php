@@ -37,7 +37,7 @@ class Tabs
     {
         // Note the 'id' attribute needs to match the 'target' parameter set above
         echo '<div id="wristler_product_data" class="panel woocommerce_options_panel">';
-        
+
         echo '<input name="wristler_security_token" type="hidden" value="' . $this->options['wristler_security_token'] . '">';
 
         woocommerce_wp_checkbox(

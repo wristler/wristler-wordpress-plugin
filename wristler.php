@@ -2,8 +2,8 @@
 /*
 Plugin Name:  Wristler
 Plugin URI:   https://wristler.eu
-Description:  This plug-in enables you to sync your stock with Wristler
-Version:      1.0.0
+Description:  This plug-ins allows your WooCommerce shop to sync with Wristler for automatic stock updates.
+Version:      1.0.1
 Author:       Wristler
 Author URI:   https://wristler.eu
 Text Domain:  wristler
