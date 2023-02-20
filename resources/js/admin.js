@@ -170,7 +170,7 @@ const Wrislter = {
     },
 
     request: function (path) {
-        let token = '8720cf29-8b66-4d25-9d87-cecb4e1b0555';
+        const token = document.querySelector('input[name="wristler_security_token"]').value;
 
         return fetch(`https://data.wristler.eu/api/v1/${path}`, {
             headers: {

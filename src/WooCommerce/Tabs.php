@@ -5,11 +5,17 @@ namespace Wristler\WooCommerce;
 class Tabs
 {
 
+    public $options;
+
     public function __construct()
     {
-        if (!isset(get_option('woocommerce_wristler_settings')['wristler_security_token'])) {
+        $options = get_option('woocommerce_wristler_settings');
+
+        if (!isset($options['wristler_security_token'])) {
             return;
         }
+
+        $this->options = $options;
 
         add_filter('woocommerce_product_data_tabs', [$this, 'addAdditionalTab']);
         add_filter('woocommerce_product_data_panels', [$this, 'renderAdditionalTab']);
@@ -31,6 +37,8 @@ class Tabs
     {
         // Note the 'id' attribute needs to match the 'target' parameter set above
         echo '<div id="wristler_product_data" class="panel woocommerce_options_panel">';
+        
+        echo '<input name="wristler_security_token" type="hidden" value="' . $this->options['wristler_security_token'] . '">';
 
         woocommerce_wp_checkbox(
             [
