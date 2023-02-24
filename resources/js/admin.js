@@ -24,15 +24,25 @@ const Wrislter = {
                 this.watches.push(curObj.formatResource(resp));
 
                 this.selectWatch(selectedWatchInput.value);
+            })
+            .catch(resp => {
+                curObj.hideLoader();
+
+                document.querySelector('#wristler_error_message').style.display = 'block';
             });
     },
 
     handleConditionalFields: () => {
         const syncProductToWristler = document.querySelector('input#_wristler_sync')
         const conditionalFields = document.querySelector('div.wristler_fields')
+        const titleField = document.querySelector('#_wristler_name');
 
         if (!syncProductToWristler) {
             return;
+        }
+
+        if(titleField && titleField.value.length === 0) {
+            titleField.value = document.querySelector('#title').value;
         }
 
         conditionalFields.style.display = syncProductToWristler.checked ? 'block' : 'none'
@@ -59,6 +69,10 @@ const Wrislter = {
                 curObj.watches = resp.data.map(watch => curObj.formatResource(watch));
                 curObj.hideLoader();
                 curObj.formatResults()
+            }).catch(() => {
+                curObj.hideLoader();
+
+                document.querySelector('#wristler_error_message').style.display = 'block';
             })
         }, 250))
     },
@@ -140,11 +154,11 @@ const Wrislter = {
         };
     },
 
-    showLoader: function() {
+    showLoader: function () {
         document.querySelector('.wristler-autocomplete-loader').style.display = 'block';
     },
 
-    hideLoader: function() {
+    hideLoader: function () {
         document.querySelector('.wristler-autocomplete-loader').style.display = 'none';
     },
 
@@ -166,7 +180,7 @@ const Wrislter = {
     },
 
     getWatchById: function (id) {
-        return this.request(`watches/${id}`)
+        return this.request(`watches/${id}`);
     },
 
     request: function (path) {
@@ -178,7 +192,13 @@ const Wrislter = {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
-        }).then(response => response.json())
+        }).then(response => {
+            if (![200, 201, 204].includes(response.status)) {
+                throw new Error(response.status)
+            }
+
+            return response.json();
+        })
     }
 }
 

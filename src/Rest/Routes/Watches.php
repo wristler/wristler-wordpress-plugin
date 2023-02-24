@@ -46,6 +46,7 @@ class Watches extends Route
                 'description' => $meta['_wristler_description'][0] ?? null,
                 'aftermarket' => isset($meta['_wristler_aftermarket'][0]) && $meta['_wristler_aftermarket'][0] === 'yes',
                 'images' => $this->getImages($watch->ID),
+                'updatedAt' => get_the_modified_time('U', $watch->ID),
             ];
         }, $this->getWatches()->posts);
     }
@@ -54,6 +55,7 @@ class Watches extends Route
     {
         return new \WP_Query([
             'post_type' => 'product',
+            'posts_per_page' => -1,
             'meta_query' => [
                 'operator' => 'AND',
                 [

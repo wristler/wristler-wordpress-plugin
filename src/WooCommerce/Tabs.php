@@ -43,7 +43,7 @@ class Tabs
         woocommerce_wp_checkbox(
             [
                 'id' => '_wristler_sync',
-                'value' => get_post_meta(get_the_ID(), '_wristler_sync', true) ? 'yes' : 'no',
+                'value' => get_post_meta(get_the_ID(), '_wristler_sync', true) === 'yes' ? 'yes' : 'no',
                 'wrapper_class' => 'show_if_simple',
                 'label' => __('Synchronization', 'wristler'),
                 'description' => __('Publish this watch on Wristler', 'wristler')
@@ -57,6 +57,8 @@ class Tabs
             'label' => __('Reference no.', 'wristler'),
             'wrapper_class' => 'is-loading',
         ));
+
+        echo '<div id="wristler_error_message" class="error inline" style="display: none;margin: 15px 10px;"><p><strong>'.__('Unable to fetch watches. Check your security token and try again later.').'</strong></p></div>';
 
         echo '<ul class="wristler-autocomplete-loader">
                 <li class="is-loading"></li>
@@ -80,7 +82,7 @@ class Tabs
 
         woocommerce_wp_text_input(array(
             'id' => '_wristler_name',
-            'value' => get_post_meta(get_the_ID(), '_wristler_name', true) ?: get_the_title(get_the_ID()),
+            'value' => get_post_meta(get_the_ID(), '_wristler_name', true),
             'label' => __('Name', 'wristler'),
         ));
 
@@ -111,11 +113,13 @@ class Tabs
             'label' => __('Condition', 'wristler'),
             'value' => get_post_meta(get_the_ID(), '_wristler_condition', true),
             'options' => [
-                'FAIR' => __('Fair', 'wristler'),
-                'GOOD' => __('Good', 'wristler'),
-                'INCOMPLETE' => __('Incomplete', 'wristler'),
                 'NEW' => __('New', 'wristler'),
+                'UNWORN' => __('Unworn', 'wristler'),
+                'VERY_GOOD' => __('Very good', 'wristler'),
+                'GOOD' => __('Good', 'wristler'),
+                'FAIR' => __('Fair', 'wristler'),
                 'POOR' => __('Poor', 'wristler'),
+                'INCOMPLETE' => __('Incomplete', 'wristler'),
             ],
         ]);
 
@@ -124,10 +128,10 @@ class Tabs
             'label' => __('Availability', 'wristler'),
             'value' => get_post_meta(get_the_ID(), '_wristler_availability', true),
             'options' => [
-                'ON_REQUEST' => __('On request', 'wristler'),
                 'READY_TO_SHIP_IN_1_3_DAYS' => __('Ready to ship in 1-3 days', 'wristler'),
                 'READY_TO_SHIP_IN_3_5_DAYS' => __('Ready to ship in 3-5 days', 'wristler'),
                 'READY_TO_SHIP_IN_6_10_DAYS' => __('Ready to ship in 6-10 days', 'wristler'),
+                'ON_REQUEST' => __('On request', 'wristler'),
             ],
         ]);
 
@@ -175,7 +179,7 @@ class Tabs
         woocommerce_wp_checkbox(
             [
                 'id' => '_wristler_aftermarket',
-                'value' => get_post_meta(get_the_ID(), '_wristler_aftermarket', true) ? 'yes' : 'no',
+                'value' => get_post_meta(get_the_ID(), '_wristler_aftermarket', true) === 'yes' ? 'yes' : 'no',
                 'label' => __('Aftermarket', 'wristler'),
                 'description' => __('This watch has after market customizations *', 'wristler'),
             ]

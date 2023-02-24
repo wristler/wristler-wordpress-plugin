@@ -2,6 +2,8 @@
 
 namespace Wristler\WooCommerce;
 
+use WC_Admin_Settings;
+
 class Integration extends \WC_Integration
 {
 
@@ -15,6 +17,24 @@ class Integration extends \WC_Integration
         $this->init_settings();
 
         add_action('woocommerce_update_options_integration_' . $this->id, array($this, 'process_admin_options'));
+    }
+
+    public function validate_wristler_security_token_field($key, $value)
+    {
+        $response = wp_remote_get('https://data.wristler.eu/api/v1', [
+            'timeout' => 5,
+            'headers' => [
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . $value,
+            ],
+        ]);
+
+        if (wp_remote_retrieve_response_code($response) !== 200) {
+            WC_Admin_Settings::add_error(__('The security token is invalid. Please check the token and try again.', 'wristler'));
+        }
+
+        return $value;
     }
 
     public function init_form_fields()
