@@ -58,7 +58,7 @@ class Tabs
             'wrapper_class' => 'is-loading',
         ));
 
-        echo '<div id="wristler_error_message" class="error inline" style="display: none;margin: 15px 10px;"><p><strong>'.__('Unable to fetch watches. Check your security token and try again later.').'</strong></p></div>';
+        echo '<div id="wristler_error_message" class="error inline" style="display: none;margin: 15px 10px;"><p><strong>'.__('Unable to fetch watches. Check your security token and try again later.', 'wristler').'</strong></p></div>';
 
         echo '<ul class="wristler-autocomplete-loader">
                 <li class="is-loading"></li>
@@ -185,7 +185,7 @@ class Tabs
             ]
         );
 
-        echo '<small style="    margin-left: 160px;margin-top: -10px;display: block;margin-bottom: 15px;">* ' . __('When checked, this watch will not be published directly. Fill in the customization options on Wristler for this watch to be published.') . '</small>';
+        echo '<small style="    margin-left: 160px;margin-top: -10px;display: block;margin-bottom: 15px;">* ' . __('When checked, this watch will not be published directly. Fill in the customization options on Wristler for this watch to be published.', 'wristler') . '</small>';
 
 
         echo '</div>';

@@ -135,7 +135,7 @@ const Wrislter = {
 
             document.querySelector('.wristler-selected-watch').innerHTML = `
                 <div>
-                    <h3>Selected watch</h3>
+                    <h3>${WRISTLER.selectedWatch}</h3>
                     <h4>${this.selectedWatch.name} <small>${this.selectedWatch.reference}</small></h4>
                     <p>${this.selectedWatch.tagLine}</p>
                 </div>

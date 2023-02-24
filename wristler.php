@@ -54,15 +54,15 @@ class Wristler
 
     public function __construct()
     {
+        load_plugin_textdomain('wristler', false, basename(dirname(__FILE__)) . '/resources/lang');
+
         $this->updater = new Updater();
         $this->assets = new Assets();
         $this->woocommerce = new WooCommerce();
         $this->rest = new Rest();
     }
 
-    public static function install() {
-
-    }
+    public static function install() {}
 
 }
 

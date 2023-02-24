@@ -1,0 +1,183 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: Wristler WordPress Plugin\n"
+"Language: nl\n"
+
+#. Plugin Name of the plugin
+#. Author of the plugin
+#: src/WooCommerce/Integration.php:13
+#: src/WooCommerce/Tabs.php:27
+msgid "Wristler"
+msgstr "Wristler"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: 
+msgid "https://wristler.eu"
+msgstr "https://wristler.eu/nl"
+
+#. Description of the plugin
+#: 
+msgid "This plug-ins allows your WooCommerce shop to sync with Wristler for automated stock updates."
+msgstr "Deze plug-ins laat je WooCommerce winkel synchroniseren met Wristler voor automatische voorraad updates."
+
+#: src/WooCommerce/Integration.php:14
+msgid "Fill in your Wristler Security Token in order for the plugin to work."
+msgstr "Vul je security token in zodat de plugin werkt."
+
+#: src/WooCommerce/Integration.php:34
+msgid "The security token is invalid. Please check the token and try again."
+msgstr "De security token is ongeldig. Controleer het token en probeer het opnieuw."
+
+#: src/WooCommerce/Integration.php:44
+msgid "Security token"
+msgstr "Security token"
+
+#: src/WooCommerce/Integration.php:46
+msgid "Enter the security token provided during installation on Wristler. Without this token the plug-in will not work."
+msgstr "Voer de security token in die tijdens de installatie op Wristler is verstrekt. Zonder dit token werkt de plug-in niet."
+
+#: src/WooCommerce/Tabs.php:48
+msgid "Synchronization"
+msgstr "Synchronisatie"
+
+#: src/WooCommerce/Tabs.php:49
+msgid "Publish this watch on Wristler"
+msgstr "Publiceer dit horloge op Wristler"
+
+#: src/WooCommerce/Tabs.php:57
+msgid "Reference no."
+msgstr "Referentie nr."
+
+#: src/WooCommerce/Tabs.php:61
+msgid "Unable to fetch watches. Check your security token and try again later."
+msgstr "Kan geen horloges ophalen. Controleer je security token en probeer het later opnieuw."
+
+#: src/WooCommerce/Tabs.php:76
+msgid "Selected watch"
+msgstr "Gekozen horloge"
+
+#: src/WooCommerce/Tabs.php:86
+msgid "Name"
+msgstr "Naam"
+
+#: src/WooCommerce/Tabs.php:92
+msgid "Price"
+msgstr "Prijs"
+
+#: src/WooCommerce/Tabs.php:98
+msgid "Shipping costs"
+msgstr "Verzendkosten"
+
+#: src/WooCommerce/Tabs.php:103
+msgid "State"
+msgstr "Staat"
+
+#: src/WooCommerce/Tabs.php:106
+msgid "Pre-owned"
+msgstr "Pre-owned"
+
+#: src/WooCommerce/Tabs.php:107
+msgid "New/unworn"
+msgstr "Nieuw/ongedragen"
+
+#: src/WooCommerce/Tabs.php:113
+msgid "Condition"
+msgstr "Conditie"
+
+#: src/WooCommerce/Tabs.php:116
+msgid "New"
+msgstr "Nieuw"
+
+#: src/WooCommerce/Tabs.php:117
+msgid "Unworn"
+msgstr "Ongedragen"
+
+#: src/WooCommerce/Tabs.php:118
+msgid "Very good"
+msgstr "Zeer goed"
+
+#: src/WooCommerce/Tabs.php:119
+msgid "Good"
+msgstr "Goed"
+
+#: src/WooCommerce/Tabs.php:120
+msgid "Fair"
+msgstr "Naar behoren"
+
+#: src/WooCommerce/Tabs.php:121
+msgid "Poor"
+msgstr "Vertoont gebreken"
+
+#: src/WooCommerce/Tabs.php:122
+msgid "Incomplete"
+msgstr "Onvolledig"
+
+#: src/WooCommerce/Tabs.php:128
+msgid "Availability"
+msgstr "Beschikbaarheid"
+
+#: src/WooCommerce/Tabs.php:131
+msgid "Ready to ship in 1-3 days"
+msgstr "Verzending binnen 1-3 dagen"
+
+#: src/WooCommerce/Tabs.php:132
+msgid "Ready to ship in 3-5 days"
+msgstr "Verzending binnen 3-5 dagen"
+
+#: src/WooCommerce/Tabs.php:133
+msgid "Ready to ship in 6-10 days"
+msgstr "Verzending binnen 6-10 dagen"
+
+#: src/WooCommerce/Tabs.php:134
+msgid "On request"
+msgstr "Op aanvraag"
+
+#: src/WooCommerce/Tabs.php:142
+msgid "Year of production"
+msgstr "Productiejaar"
+
+#: src/WooCommerce/Tabs.php:149
+msgid "Box"
+msgstr "Box"
+
+#: src/WooCommerce/Tabs.php:150
+msgid "Includes original box"
+msgstr "Inclusief originele doos"
+
+#: src/WooCommerce/Tabs.php:158
+msgid "Papers"
+msgstr "Papieren"
+
+#: src/WooCommerce/Tabs.php:159
+msgid "Includes papers/certificate"
+msgstr "Inclusief papieren/certificaat"
+
+#: src/WooCommerce/Tabs.php:167
+msgid "Warranty"
+msgstr "Garantie"
+
+#: src/WooCommerce/Tabs.php:168
+msgid "Includes warranty"
+msgstr "Inclusief garantie"
+
+#: src/WooCommerce/Tabs.php:174
+msgid "Description"
+msgstr "Beschrijving"
+
+#: src/WooCommerce/Tabs.php:183
+msgid "Aftermarket"
+msgstr "Aftermarket"
+
+#: src/WooCommerce/Tabs.php:184
+msgid "This watch has after market customizations *"
+msgstr "Dit horloge heeft after market aanpassingen *"
+
+#: 
+msgid "When checked, this watch will not be published directly. Fill in the customization options on Wristler for this watch to be published."
+msgstr "Indien aangevinkt, wordt dit horloge niet direct gepubliceerd. Vul de gegevens op Wristler in om dit horloge te publiceren."
+
