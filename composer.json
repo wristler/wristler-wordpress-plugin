@@ -2,6 +2,11 @@
   "name": "wristler/wristler-wordpress-plugin",
   "description": "This plug-in enables you to sync your stock with Wristler.",
   "type": "wordpress-plugin",
+  "license": "MIT",
+  "homepage": "https://wristler.eu",
+  "support": {
+    "email": "support@wristler.eu"
+  },
   "autoload": {
     "psr-4": {
       "Wristler\\": "src/"
@@ -14,6 +19,6 @@
     }
   ],
   "require": {
-    "php": "^7.4"
+    "php": "^7.4|>=8.0"
   }
 }
