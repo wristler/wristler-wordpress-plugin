@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Wristler plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Wristler 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wristler\n"
+"Project-Id-Version: Wristler 1.0.1\n"
+"Report-Msgid-Bugs-To: https://github.com/wristler/wristler-wordpress-plugin\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-02-24T10:43:04+00:00\n"
+"POT-Creation-Date: 2023-03-06T14:21:04+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: wristler\n"
@@ -184,4 +184,12 @@ msgstr ""
 
 #: src/WooCommerce/Tabs.php:188
 msgid "When checked, this watch will not be published directly. Fill in the customization options on Wristler for this watch to be published."
+msgstr ""
+
+#: src/WooCommerce/Tabs.php:94
+msgid "Synchronize price"
+msgstr ""
+
+#: src/WooCommerce/Tabs.php:95
+msgid "Synchronize product price with Wristler"
 msgstr ""

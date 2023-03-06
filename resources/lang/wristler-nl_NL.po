@@ -181,3 +181,11 @@ msgstr "Dit horloge heeft after market aanpassingen *"
 msgid "When checked, this watch will not be published directly. Fill in the customization options on Wristler for this watch to be published."
 msgstr "Indien aangevinkt, wordt dit horloge niet direct gepubliceerd. Vul de gegevens op Wristler in om dit horloge te publiceren."
 
+#: 
+msgid "Synchronize price"
+msgstr "Prijs synchroniseren"
+
+#: 
+msgid "Synchronize product price with Wristler"
+msgstr "Synchroniseer product prijs met Wristler"
+
