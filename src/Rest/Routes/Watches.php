@@ -57,7 +57,6 @@ class Watches extends Route
             'post_type' => 'product',
             'posts_per_page' => -1,
             'meta_query' => [
-                'operator' => 'AND',
                 [
                     'key' => '_wristler_sync',
                     'value' => 'yes',
@@ -72,6 +71,27 @@ class Watches extends Route
                     'key' => '_wristler_selected_id',
                     'compare' => '!=',
                     'value' => ''
+                ],
+                [
+                    'relation' => 'OR',
+                    [
+                        'key' => '_manage_stock',
+                        'compare' => '==',
+                        'value' => 'no'
+                    ],
+                    [
+                        'relation' => 'AND',
+                        [
+                            'key' => '_manage_stock',
+                            'compare' => '==',
+                            'value' => 'yes'
+                        ],
+                        [
+                            'key' => '_stock',
+                            'compare' => '>=',
+                            'value' => '1'
+                        ],
+                    ],
                 ]
             ],
         ]);
