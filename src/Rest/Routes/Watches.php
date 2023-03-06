@@ -29,12 +29,18 @@ class Watches extends Route
         return array_map(function ($watch) {
             $meta = get_post_meta($watch->ID);
 
+            $product = wc_get_product($watch);
+
+            $price = isset($meta['_wristler_sync_price'][0]) && $meta['_wristler_sync_price'][0] === 'yes'
+                ? $product->get_price()
+                : $meta['_wristler_price'][0];
+
             return [
                 'ID' => $watch->ID,
                 'reference' => $meta['_wristler_reference'][0] ?? null,
                 'selectedReferenceUuid' => $meta['_wristler_selected_id'][0] ?? null,
                 'name' => $meta['_wristler_name'][0] ?? null,
-                'price' => $meta['_wristler_price'][0] ?? null,
+                'price' => $price ?? null,
                 'shippingCosts' => $meta['_wristler_shipping_costs'][0] ?? null,
                 'state' => $meta['_wristler_state'][0] ?? null,
                 'condition' => $meta['_wristler_condition'][0] ?? null,
