@@ -89,7 +89,8 @@ class Updater
         $remote = get_transient($this->cacheKey);
 
         if (!$remote) {
-            $remote = wp_remote_get('https://wp.wristler.eu/info.json', [
+            $remote = wp_remote_get('https://raw.githubusercontent.com/wristler/wristler-wordpress-plugin/main/info.json', [
+//            $remote = wp_remote_get('https://wp.wristler.eu/info.json', [
                 'timeout' => 5,
                 'headers' => [
                     'Accept' => 'application/json',
