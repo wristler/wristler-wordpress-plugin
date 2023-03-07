@@ -2,11 +2,9 @@
   "name": "Wristler",
   "slug": "wristler",
   "author": "<a href='https://wristler.eu'>Wristler</a>",
-
-  "version": "1.0.1",
-  "last_updated": "2023-03-06 14:51:00",
-  "download_url": "https://github.com/wristler/wristler-wordpress-plugin/releases/download/v1.0.1/wristler-1.0.1.zip",
-
+  "version": "v1.0.5",
+  "last_updated": "v1.0.5",
+  "download_url": "https://github.com/wristler/wristler-wordpress-plugin/releases/download/$RELEASE_VERSION/wristler.zip",
   "requires": "6.0",
   "tested": "6.1.1",
   "requires_php": "7.4",
@@ -20,4 +18,3 @@
     "high": "https://raw.githubusercontent.com/wristler/wristler-wordpress-plugin/main/.github/images/banner-1544x500.jpg?raw=true"
   }
 }
-
