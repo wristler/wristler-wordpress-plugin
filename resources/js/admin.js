@@ -19,6 +19,12 @@ const Wrislter = {
             return;
         }
 
+        if(selectedWatchInput.value === 'unknown') {
+            this.selectWatch(selectedWatchInput.value);
+
+            return;
+        }
+
         this.getWatchById(selectedWatchInput.value)
             .then(resp => {
                 this.watches.push(curObj.formatResource(resp));
@@ -43,7 +49,7 @@ const Wrislter = {
             return;
         }
 
-        if(titleField && titleField.value.length === 0) {
+        if (titleField && titleField.value.length === 0) {
             titleField.value = document.querySelector('#title').value;
         }
 
@@ -91,7 +97,7 @@ const Wrislter = {
             return;
         }
 
-        container.innerHTML = this.watches.map(watch => {
+        let watches = this.watches.map(watch => {
             return `
                 <li>
                     <a data-id="${watch.id}" href="#">
@@ -101,6 +107,17 @@ const Wrislter = {
                 </li>
             `;
         }).join('');
+
+        watches = watches + `
+            <li style="background: #f0f0f1;">
+                <a href="#" style="color: rgba(0, 0, 0, .75);" data-id="unknown">
+                    <h4>Manual reference</h4>
+                    <p>Manually create this watch. Attributes should be filled at Wristler.</p>
+                </a>
+            </li>
+        `;
+
+        container.innerHTML = watches;
 
         this.handleWatchSelection();
     },
@@ -130,6 +147,18 @@ const Wrislter = {
     selectWatch: function (watch) {
         const selectedWatchInput = document.querySelector('input#_wristler_selected_id');
         const selectedWatchContainer = document.querySelector('.wristler-selected-watch-container');
+
+        if (watch === 'unknown') {
+            selectedWatchContainer.style.display = 'block';
+            selectedWatchInput.value = 'unknown';
+
+            document.querySelector('.wristler-selected-watch').style.display = 'none';
+
+            return;
+        }
+
+        document.querySelector('.wristler-selected-watch').style.display = 'block';
+
 
         this.selectedWatch = this.watches.filter(w => w.id === watch)[0];
 

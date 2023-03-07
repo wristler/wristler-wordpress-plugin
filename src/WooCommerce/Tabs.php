@@ -51,6 +51,7 @@ class Tabs
         );
 
         echo '<div class="wristler_fields">';
+
         woocommerce_wp_text_input(array(
             'id' => '_wristler_reference',
             'value' => get_post_meta(get_the_ID(), '_wristler_reference', true),

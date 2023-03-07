@@ -35,10 +35,14 @@ class Watches extends Route
                 ? $product->get_price()
                 : $meta['_wristler_price'][0];
 
+            $selectedReferenceUuid = isset($meta['_wristler_selected_id'][0]) && $meta['_wristler_selected_id'][0] !== 'unknown'
+                ? $meta['_wristler_selected_id'][0]
+                : null;
+
             return [
                 'ID' => $watch->ID,
                 'reference' => $meta['_wristler_reference'][0] ?? null,
-                'selectedReferenceUuid' => $meta['_wristler_selected_id'][0] ?? null,
+                'selectedReferenceUuid' => $selectedReferenceUuid,
                 'name' => $meta['_wristler_name'][0] ?? null,
                 'price' => $price ?? null,
                 'shippingCosts' => $meta['_wristler_shipping_costs'][0] ?? null,
