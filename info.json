@@ -2,20 +2,22 @@
   "name": "Wristler",
   "slug": "wristler",
   "author": "<a href='https://wristler.eu'>Wristler</a>",
+
   "version": "1.0.1",
+  "last_updated": "2023-03-06 14:51:00",
   "download_url": "https://github.com/wristler/wristler-wordpress-plugin/releases/download/v1.0.1/wristler-1.0.1.zip",
+
   "requires": "6.0",
   "tested": "6.1.1",
   "requires_php": "7.4",
-  "last_updated": "2023-03-06 14:51:00",
   "sections": {
     "description": "This plug-in enables additional fields in WooCommerce for synchronization with Wristler.",
     "installation": "<h4>Installation</h4><ol><li>Upload the plugin using WordPress or FTP</li><li>Enable the plug-in</li><li>Navigate to WooCommerce -> Settings -> Integrations -> Wristler and fill in your security token.</li><li>Fill in the fields on the products you want to publish on Wristler.</li></ol>",
-    "changelog": "<h4>1.0.1 &mdash; 06-03-2023</h4><ul><li>Automatically skip products where current stock is 0</li><li>Added option for synchronizing price</li><li>Transations updated</li></ul><h4>1.0.0 &mdash; 24-02-2023</h4><ul><li>Initial release</li></ul>"
+    "changelog": "Changelog can be found at <a href=\"https://github.com/wristler/wristler-wordpress-plugin/releases\" target=\"_blank\">Github</a>."
   },
   "banners": {
-    "low": "https://wp.wristler.eu/banners/banner-772x250.jpg",
-    "high": "https://wp.wristler.eu/banners/banner-1544x500.jpg"
+    "low": "https://raw.githubusercontent.com/wristler/wristler-wordpress-plugin/main/.github/images/banner-772x250.jpg?raw=true",
+    "high": "https://raw.githubusercontent.com/wristler/wristler-wordpress-plugin/main/.github/images/banner-1544x500.jpg?raw=true"
   }
 }
 
