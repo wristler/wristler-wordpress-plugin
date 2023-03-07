@@ -45,14 +45,14 @@ jobs:
         with:
           file: info.json
           field: last_updated
-          value: ${{ env.RELEASE_VERSION }}
+          value: ${{ env.RELEASE_DATE }}
 
       - name: Update info.json (Download URL)
         uses: jossef/action-set-json-field@v2.1
         with:
           file: info.json
           field: download_url
-          value: "https://github.com/wristler/wristler-wordpress-plugin/releases/download/$RELEASE_VERSION/wristler.zip"
+          value: "https://github.com/wristler/wristler-wordpress-plugin/releases/download/${{ env.RELEASE_VERSION }}/wristler.zip"
 
       - name: Update WordPress information
         run: |
