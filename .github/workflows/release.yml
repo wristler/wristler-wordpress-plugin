@@ -1,0 +1,27 @@
+name: 'Release new version'
+
+on:
+  push:
+    tags:
+        - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Archive Release
+        uses: thedoctor0/zip-release@0.7.1
+        with:
+          type: 'zip'
+          filename: 'wristler.zip'
+          exclusions: '*.git* /*node_modules/* .editorconfig'
+
+      - name: Upload Release
+        uses: ncipollo/release-action@v1.12.0
+        with:
+          artifacts: "wristler.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          replacesArtifacts: true
