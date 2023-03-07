@@ -38,7 +38,7 @@ jobs:
         with:
           file: info.json
           field: version
-          value: ${{ env.RELEASE_VERSION }}
+          value: ${{ env.RELEASE_VERSION#v }}
 
       - name: Update info.json (Updated date)
         uses: jossef/action-set-json-field@v2.1
