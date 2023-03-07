@@ -7,7 +7,7 @@
 
 **Tested up to:** 6.1.1
 
-**Stable tag:** 1.0.0
+**Stable tag:** 1.0.2
 
 **License:** MIT
 

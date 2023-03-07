@@ -90,7 +90,6 @@ class Updater
 
         if (!$remote) {
             $remote = wp_remote_get('https://raw.githubusercontent.com/wristler/wristler-wordpress-plugin/main/info.json', [
-//            $remote = wp_remote_get('https://wp.wristler.eu/info.json', [
                 'timeout' => 5,
                 'headers' => [
                     'Accept' => 'application/json',
@@ -102,7 +101,7 @@ class Updater
                 return false;
             }
 
-            set_transient($this->cacheKey, $remote, DAY_IN_SECONDS);
+            set_transient($this->cacheKey, $remote, HOUR_IN_SECONDS);
         }
 
         return json_decode(wp_remote_retrieve_body($remote));
