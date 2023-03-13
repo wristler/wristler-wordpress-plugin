@@ -87,10 +87,16 @@ class Tabs
             'label' => __('Name', 'wristler'),
         ));
 
+        $syncPriceValue = get_post_meta(get_the_ID(), '_wristler_sync_price', true);
+
+        if(empty($syncPriceValue)) {
+            $syncPriceValue = 'yes';
+        }
+
         woocommerce_wp_checkbox(
             [
                 'id' => '_wristler_sync_price',
-                'value' => get_post_meta(get_the_ID(), '_wristler_sync_price', true) === 'yes' ? 'yes' : 'no',
+                'value' => $syncPriceValue === 'yes' ? 'yes' : 'no',
                 'wrapper_class' => 'show_if_simple',
                 'label' => __('Synchronize price', 'wristler'),
                 'description' => __('Synchronize product price with Wristler', 'wristler')
