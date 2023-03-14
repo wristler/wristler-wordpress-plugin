@@ -127,12 +127,17 @@ class Watches extends Route
         $watch = wc_get_product($watchId);
 
         $featuredImage = wp_get_attachment_image_src(get_post_thumbnail_id($watchId), 'full');
+        $gallery = $watch->get_gallery_image_ids();
+
+        if (!is_array($gallery)) {
+            $gallery = [];
+        }
 
         return [
             $featuredImage[0],
             ...array_map(function ($image) {
                 return wp_get_attachment_url($image);
-            }, $watch->get_gallery_image_ids()),
+            }, $gallery),
         ];
     }
 }
