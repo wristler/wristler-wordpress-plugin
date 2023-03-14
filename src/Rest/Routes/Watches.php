@@ -26,7 +26,7 @@ class Watches extends Route
 
     public function watches(): array
     {
-        return array_map(function ($watch) {
+        return array_filter(array_map(function ($watch) {
             $meta = get_post_meta($watch->ID);
 
             $product = wc_get_product($watch);
@@ -38,6 +38,12 @@ class Watches extends Route
             $selectedReferenceUuid = isset($meta['_wristler_selected_id'][0]) && $meta['_wristler_selected_id'][0] !== 'unknown'
                 ? $meta['_wristler_selected_id'][0]
                 : null;
+
+            $images = $this->getImages($watch->ID);
+
+            if (count($images) === 0) {
+                return [];
+            }
 
             return [
                 'ID' => $watch->ID,
@@ -58,7 +64,7 @@ class Watches extends Route
                 'images' => $this->getImages($watch->ID),
                 'updatedAt' => get_the_modified_time('U', $watch->ID),
             ];
-        }, $this->getWatches()->posts);
+        }, $this->getWatches()->posts));
     }
 
     protected function getWatches()
@@ -133,11 +139,11 @@ class Watches extends Route
             $gallery = [];
         }
 
-        return [
-            $featuredImage[0],
+        return array_filter([
+            $featuredImage[0] ?? null,
             ...array_map(function ($image) {
                 return wp_get_attachment_url($image);
             }, $gallery),
-        ];
+        ]);
     }
 }
