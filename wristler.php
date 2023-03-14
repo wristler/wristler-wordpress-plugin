@@ -3,7 +3,7 @@
 Plugin Name:  Wristler
 Plugin URI:   https://wristler.eu
 Description:  This plug-ins allows your WooCommerce shop to sync with Wristler for automated stock updates.
-Version:      1.0.5
+Version:      1.0.6
 Author:       Wristler
 Author URI:   https://wristler.eu
 Text Domain:  wristler
@@ -30,7 +30,7 @@ if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
 class Wristler
 {
 
-    const VERSION = '1.0.5';
+    const VERSION = '1.0.6';
 
     protected static $instance;
 
