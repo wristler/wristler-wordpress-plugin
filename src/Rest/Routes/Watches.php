@@ -41,8 +41,18 @@ class Watches extends Route
 
             $availability = $meta['_wristler_availability'][0] ?? null;
 
-            if($product->is_on_backorder()) {
+            if ($product->is_on_backorder()) {
                 $availability = 'ON_REQUEST';
+            }
+
+            $yearOfProduction = $meta['_wristler_year_of_production'][0] ?? null;
+
+            if ($yearOfProduction && intval($yearOfProduction) <= 1900) {
+                $yearOfProduction = 'BEFORE_1900';
+            }
+
+            if (empty($yearOfProduction)) {
+                $yearOfProduction = 'UNKNOWN_RANDOM_SERIAL';
             }
 
             $images = $this->getImages($watch->ID);
@@ -61,7 +71,7 @@ class Watches extends Route
                 'state' => $meta['_wristler_state'][0] ?? null,
                 'condition' => $meta['_wristler_condition'][0] ?? null,
                 'availability' => $availability,
-                'yearOfProduction' => $meta['_wristler_year_of_production'][0] ?? null,
+                'yearOfProduction' => $yearOfProduction,
                 'box' => isset($meta['_wristler_box'][0]) && $meta['_wristler_box'][0] === 'yes',
                 'papers' => isset($meta['_wristler_papers'][0]) && $meta['_wristler_papers'][0] === 'yes',
                 'warranty' => isset($meta['_wristler_warranty'][0]) && $meta['_wristler_warranty'][0] === 'yes',
