@@ -127,6 +127,10 @@
     background-size: 400% 400%;
 }
 
+.wristler-sync-price-container {
+    margin-top: 10px;
+}
+
 @keyframes pulse {
     0% {
         background-position: 0 0;

@@ -103,11 +103,26 @@ class Tabs
             ]
         );
 
+        echo '<div class="wristler-sync-price-container">';
+
+        $priceOnRequest = get_post_meta(get_the_ID(), '_wristler_price_on_request', true) ?? 'no';
+
+        woocommerce_wp_checkbox(
+            [
+                'id' => '_wristler_price_on_request',
+                'value' => $priceOnRequest === 'yes' ? 'yes' : 'no',
+                'wrapper_class' => 'show_if_simple',
+                'label' => __('Price on request', 'wristler'),
+                'description' => __('Price on request', 'wristler')
+            ]
+        );
+
         woocommerce_wp_text_input(array(
             'id' => '_wristler_price',
             'value' => get_post_meta(get_the_ID(), '_wristler_price', true) ?: get_post_meta(get_the_ID(), '_regular_price', true),
             'label' => __('Price', 'wristler'),
         ));
+        echo '</div>';
 
         woocommerce_wp_text_input(array(
             'id' => '_wristler_shipping_costs',

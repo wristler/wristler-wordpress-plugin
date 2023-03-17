@@ -43,6 +43,8 @@ const Wrislter = {
         const conditionalFields = document.querySelector('div.wristler_fields')
         const titleField = document.querySelector('#_wristler_name');
         const syncPrice = document.querySelector('input#_wristler_sync_price');
+        const priceOnRequest = document.querySelector('input#_wristler_price_on_request');
+        const priceContainer = document.querySelector('.wristler-sync-price-container');
         const priceField = document.querySelector('input#_wristler_price');
 
         if (!syncProductToWristler) {
@@ -54,14 +56,19 @@ const Wrislter = {
         }
 
         conditionalFields.style.display = syncProductToWristler.checked ? 'block' : 'none'
-        priceField.parentNode.style.display = syncPrice.checked ? 'none' : 'block'
+        priceContainer.style.display = syncPrice.checked ? 'none' : 'block'
+        priceField.parentNode.style.display = priceOnRequest.checked ? 'none' : 'block'
 
         syncProductToWristler.addEventListener('change', function () {
             conditionalFields.style.display = this.checked ? 'block' : 'none'
         })
 
         syncPrice.addEventListener('change', function () {
-            priceField.parentNode.style.display = this.checked ? 'none' : 'block'
+            priceContainer.style.display = this.checked ? 'none' : 'block'
+        })
+
+        priceOnRequest.addEventListener('change', function () {
+            priceField.parentNode.style.display = priceOnRequest.checked ? 'none' : 'block'
         })
     },
 
