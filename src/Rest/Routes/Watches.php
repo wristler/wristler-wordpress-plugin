@@ -39,6 +39,12 @@ class Watches extends Route
                 ? $meta['_wristler_selected_id'][0]
                 : null;
 
+            $availability = $meta['_wristler_availability'][0] ?? null;
+
+            if($product->is_on_backorder()) {
+                $availability = 'ON_REQUEST';
+            }
+
             $images = $this->getImages($watch->ID);
 
             if (count($images) === 0) {
@@ -54,7 +60,7 @@ class Watches extends Route
                 'shippingCosts' => $meta['_wristler_shipping_costs'][0] ?? null,
                 'state' => $meta['_wristler_state'][0] ?? null,
                 'condition' => $meta['_wristler_condition'][0] ?? null,
-                'availability' => $meta['_wristler_availability'][0] ?? null,
+                'availability' => $availability,
                 'yearOfProduction' => $meta['_wristler_year_of_production'][0] ?? null,
                 'box' => isset($meta['_wristler_box'][0]) && $meta['_wristler_box'][0] === 'yes',
                 'papers' => isset($meta['_wristler_papers'][0]) && $meta['_wristler_papers'][0] === 'yes',
