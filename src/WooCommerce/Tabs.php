@@ -59,7 +59,7 @@ class Tabs
             'wrapper_class' => 'is-loading',
         ));
 
-        echo '<div id="wristler_error_message" class="error inline" style="display: none;margin: 15px 10px;"><p><strong>'.__('Unable to fetch watches. Check your security token and try again later.', 'wristler').'</strong></p></div>';
+        echo '<div id="wristler_error_message" class="error inline" style="display: none;margin: 15px 10px;"><p><strong>' . __('Unable to fetch watches. Check your security token and try again later.', 'wristler') . '</strong></p></div>';
 
         echo '<ul class="wristler-autocomplete-loader">
                 <li class="is-loading"></li>
@@ -89,7 +89,7 @@ class Tabs
 
         $syncPriceValue = get_post_meta(get_the_ID(), '_wristler_sync_price', true);
 
-        if(empty($syncPriceValue)) {
+        if (empty($syncPriceValue)) {
             $syncPriceValue = 'yes';
         }
 
@@ -120,8 +120,8 @@ class Tabs
             'label' => __('State', 'wristler'),
             'value' => get_post_meta(get_the_ID(), '_wristler_state', true),
             'options' => [
-                'PRE_OWNED' => __('Pre-owned', 'wristler'),
                 'NEW_UNWORN' => __('New/unworn', 'wristler'),
+                'PRE_OWNED' => __('Pre-owned', 'wristler'),
             ],
         ]);
 
