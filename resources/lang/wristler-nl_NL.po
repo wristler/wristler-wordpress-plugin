@@ -189,3 +189,11 @@ msgstr "Prijs synchroniseren"
 msgid "Synchronize product price with Wristler"
 msgstr "Synchroniseer product prijs met Wristler"
 
+#: 
+msgid "This watch is synchronized with Wristler without price synchronization. Check the price with the Wristler options before updating."
+msgstr "Dit horloge is gesynchroniseerd met Wristler zonder prijs synchronisatie. Controleer de prijs bij de Wristler opties voor het bijwerken."
+
+#: 
+msgid "Price on request"
+msgstr "Prijs op aanvraag"
+
