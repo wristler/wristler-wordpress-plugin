@@ -131,6 +131,16 @@
     margin-top: 10px;
 }
 
+.wristler-warning {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-left-width: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    margin: 5px 15px 15px 10px;
+    padding: 5px 12px;
+    border-left-color: #dba617;
+}
+
 @keyframes pulse {
     0% {
         background-position: 0 0;

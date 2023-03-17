@@ -19,6 +19,8 @@ class Tabs
 
         add_filter('woocommerce_product_data_tabs', [$this, 'addAdditionalTab']);
         add_filter('woocommerce_product_data_panels', [$this, 'renderAdditionalTab']);
+
+        add_action('woocommerce_product_options_pricing', [$this, 'addWarningForUnsynchronizedPrice']);
     }
 
     public function addAdditionalTab($tabs)
@@ -225,6 +227,15 @@ class Tabs
 
 
         echo '</div>';
+    }
+
+    public function addWarningForUnsynchronizedPrice()
+    {
+        global $post;
+
+        if (get_post_meta($post->ID, '_wristler_sync', true) && get_post_meta($post->ID, '_wristler_sync_price', true) === 'no') {
+            echo '<div class="wristler-warning">' . __('This watch is synchronized with Wristler without price synchronization. Check the price with the Wristler options before updating.', 'wristler') . '</div>';
+        }
     }
 
 }
