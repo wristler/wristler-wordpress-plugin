@@ -55,6 +55,10 @@ class Watches extends Route
                 $availability = 'ON_REQUEST';
             }
 
+            if(!$product->is_in_stock()) {
+                return [];
+            }
+
             $yearOfProduction = $meta['_wristler_year_of_production'][0] ?? null;
 
             if ($yearOfProduction && intval($yearOfProduction) <= 1900) {
