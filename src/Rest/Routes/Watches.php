@@ -77,7 +77,7 @@ class Watches extends Route
 
             return [
                 'ID' => $watch->ID,
-                'reference' => $meta['_wristler_reference'][0] ?? null,
+                'reference' => trim($meta['_wristler_reference'][0]) ?? null,
                 'selectedReferenceUuid' => $selectedReferenceUuid,
                 'name' => $meta['_wristler_name'][0] ?? null,
                 'price' => $price,
@@ -114,11 +114,6 @@ class Watches extends Route
                 ],
                 [
                     'key' => '_wristler_reference',
-                    'compare' => '!=',
-                    'value' => ''
-                ],
-                [
-                    'key' => '_wristler_selected_id',
                     'compare' => '!=',
                     'value' => ''
                 ],
