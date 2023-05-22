@@ -10,7 +10,7 @@ msgstr ""
 #. Plugin Name of the plugin
 #. Author of the plugin
 #: src/WooCommerce/Integration.php:13
-#: src/WooCommerce/Tabs.php:27
+#: src/WooCommerce/Tabs.php:29
 msgid "Wristler"
 msgstr "Wristler"
 
@@ -41,159 +41,175 @@ msgstr "Security token"
 msgid "Enter the security token provided during installation on Wristler. Without this token the plug-in will not work."
 msgstr "Voer de security token in die tijdens de installatie op Wristler is verstrekt. Zonder dit token werkt de plug-in niet."
 
-#: src/WooCommerce/Tabs.php:48
+#: src/WooCommerce/Tabs.php:50
 msgid "Synchronization"
 msgstr "Synchronisatie"
 
-#: src/WooCommerce/Tabs.php:49
+#: src/WooCommerce/Tabs.php:51
 msgid "Publish this watch on Wristler"
 msgstr "Publiceer dit horloge op Wristler"
 
-#: src/WooCommerce/Tabs.php:57
+#: src/WooCommerce/Tabs.php:60
 msgid "Reference no."
 msgstr "Referentie nr."
 
-#: src/WooCommerce/Tabs.php:61
+#: src/WooCommerce/Tabs.php:64
 msgid "Unable to fetch watches. Check your security token and try again later."
 msgstr "Kan geen horloges ophalen. Controleer je security token en probeer het later opnieuw."
 
-#: src/WooCommerce/Tabs.php:76
+#: src/Assets.php:19
+#: src/WooCommerce/Tabs.php:79
 msgid "Selected watch"
 msgstr "Gekozen horloge"
 
-#: src/WooCommerce/Tabs.php:86
+#: src/WooCommerce/Tabs.php:89
 msgid "Name"
 msgstr "Naam"
 
-#: src/WooCommerce/Tabs.php:92
+#: src/WooCommerce/Tabs.php:127
 msgid "Price"
 msgstr "Prijs"
 
-#: src/WooCommerce/Tabs.php:98
+#: src/WooCommerce/Tabs.php:134
 msgid "Shipping costs"
 msgstr "Verzendkosten"
 
-#: src/WooCommerce/Tabs.php:103
+#: src/WooCommerce/Tabs.php:139
 msgid "State"
 msgstr "Staat"
 
-#: src/WooCommerce/Tabs.php:106
+#: src/WooCommerce/Tabs.php:143
 msgid "Pre-owned"
 msgstr "Pre-owned"
 
-#: src/WooCommerce/Tabs.php:107
+#: src/WooCommerce/Tabs.php:142
 msgid "New/unworn"
 msgstr "Nieuw/ongedragen"
 
-#: src/WooCommerce/Tabs.php:113
+#: src/WooCommerce/Tabs.php:149
 msgid "Condition"
 msgstr "Conditie"
 
-#: src/WooCommerce/Tabs.php:116
+#: src/WooCommerce/Tabs.php:152
 msgid "New"
 msgstr "Nieuw"
 
-#: src/WooCommerce/Tabs.php:117
+#: src/WooCommerce/Tabs.php:153
 msgid "Unworn"
 msgstr "Ongedragen"
 
-#: src/WooCommerce/Tabs.php:118
+#: src/WooCommerce/Tabs.php:154
 msgid "Very good"
 msgstr "Zeer goed"
 
-#: src/WooCommerce/Tabs.php:119
+#: src/WooCommerce/Tabs.php:155
 msgid "Good"
 msgstr "Goed"
 
-#: src/WooCommerce/Tabs.php:120
+#: src/WooCommerce/Tabs.php:156
 msgid "Fair"
 msgstr "Naar behoren"
 
-#: src/WooCommerce/Tabs.php:121
+#: src/WooCommerce/Tabs.php:157
 msgid "Poor"
 msgstr "Vertoont gebreken"
 
-#: src/WooCommerce/Tabs.php:122
+#: src/WooCommerce/Tabs.php:158
 msgid "Incomplete"
 msgstr "Onvolledig"
 
-#: src/WooCommerce/Tabs.php:128
+#: src/WooCommerce/Tabs.php:164
 msgid "Availability"
 msgstr "Beschikbaarheid"
 
-#: src/WooCommerce/Tabs.php:131
+#: src/WooCommerce/Tabs.php:167
 msgid "Ready to ship in 1-3 days"
 msgstr "Verzending binnen 1-3 dagen"
 
-#: src/WooCommerce/Tabs.php:132
+#: src/WooCommerce/Tabs.php:168
 msgid "Ready to ship in 3-5 days"
 msgstr "Verzending binnen 3-5 dagen"
 
-#: src/WooCommerce/Tabs.php:133
+#: src/WooCommerce/Tabs.php:169
 msgid "Ready to ship in 6-10 days"
 msgstr "Verzending binnen 6-10 dagen"
 
-#: src/WooCommerce/Tabs.php:134
+#: src/WooCommerce/Tabs.php:170
 msgid "On request"
 msgstr "Op aanvraag"
 
-#: src/WooCommerce/Tabs.php:142
+#: src/WooCommerce/Tabs.php:178
+#: src/WooCommerce/Tabs.php:187
 msgid "Year of production"
 msgstr "Productiejaar"
 
-#: src/WooCommerce/Tabs.php:149
+#: src/WooCommerce/Tabs.php:194
 msgid "Box"
 msgstr "Box"
 
-#: src/WooCommerce/Tabs.php:150
+#: src/WooCommerce/Tabs.php:195
 msgid "Includes original box"
 msgstr "Inclusief originele doos"
 
-#: src/WooCommerce/Tabs.php:158
+#: src/WooCommerce/Tabs.php:203
 msgid "Papers"
 msgstr "Papieren"
 
-#: src/WooCommerce/Tabs.php:159
+#: src/WooCommerce/Tabs.php:204
 msgid "Includes papers/certificate"
 msgstr "Inclusief papieren/certificaat"
 
-#: src/WooCommerce/Tabs.php:167
+#: src/WooCommerce/Tabs.php:212
 msgid "Warranty"
 msgstr "Garantie"
 
-#: src/WooCommerce/Tabs.php:168
+#: src/WooCommerce/Tabs.php:213
 msgid "Includes warranty"
 msgstr "Inclusief garantie"
 
-#: src/WooCommerce/Tabs.php:174
+#: src/WooCommerce/Tabs.php:219
 msgid "Description"
 msgstr "Beschrijving"
 
-#: src/WooCommerce/Tabs.php:183
+#: src/WooCommerce/Tabs.php:230
 msgid "Aftermarket"
 msgstr "Aftermarket"
 
-#: src/WooCommerce/Tabs.php:184
+#: src/WooCommerce/Tabs.php:231
 msgid "This watch has after market customizations *"
 msgstr "Dit horloge heeft after market aanpassingen *"
 
-#: 
+#: src/WooCommerce/Tabs.php:235
 msgid "When checked, this watch will not be published directly. Fill in the customization options on Wristler for this watch to be published."
 msgstr "Indien aangevinkt, wordt dit horloge niet direct gepubliceerd. Vul de gegevens op Wristler in om dit horloge te publiceren."
 
-#: 
+#: src/WooCommerce/Tabs.php:105
 msgid "Synchronize price"
 msgstr "Prijs synchroniseren"
 
-#: 
+#: src/WooCommerce/Tabs.php:106
 msgid "Synchronize product price with Wristler"
 msgstr "Synchroniseer product prijs met Wristler"
 
-#: 
+#: src/WooCommerce/Tabs.php:250
 msgid "This watch is synchronized with Wristler without price synchronization. Check the price with the Wristler options before updating."
 msgstr "Dit horloge is gesynchroniseerd met Wristler zonder prijs synchronisatie. Controleer de prijs bij de Wristler opties voor het bijwerken."
 
-#: 
+#: src/WooCommerce/Tabs.php:119
+#: src/WooCommerce/Tabs.php:120
 msgid "Price on request"
 msgstr "Prijs op aanvraag"
+
+#: src/WooCommerce/Tabs.php:92
+#: src/WooCommerce/Tabs.php:223
+msgid "Leave empty to use the default production description."
+msgstr "Laat leeg om de standaard product omschrijving te gebruiken."
+
+#: src/WooCommerce/Tabs.php:179
+msgid "Unknown production year (random serial)"
+msgstr "Productiejaar onbekend (willekeurig serienummer)"
+
+#: 
+msgid "Leave empty to use the title specified in WordPress"
+msgstr "Laat leeg om de standaard product titel te gebruiken"
 

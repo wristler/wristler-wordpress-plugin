@@ -89,7 +89,7 @@ class Tabs
             'label' => __('Name', 'wristler'),
         ));
 
-        echo '<small style="margin-left: 160px;margin-top: -10px;display: block;margin-bottom: 15px;">* ' . __('Leave empty to use the default production description.', 'wristler') . '</small>';
+        echo '<small style="margin-left: 160px;margin-top: -10px;display: block;margin-bottom: 15px;">* ' . __('Leave empty to use the title specified in WordPress', 'wristler') . '</small>';
 
         $syncPriceValue = get_post_meta(get_the_ID(), '_wristler_sync_price', true);
 
