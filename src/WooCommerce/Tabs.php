@@ -169,6 +169,15 @@ class Tabs
             ],
         ]);
 
+        woocommerce_wp_checkbox(
+            [
+                'id' => '_wristler_production_year_unknown',
+                'value' => get_post_meta(get_the_ID(), '_wristler_production_year_unknown', true) === 'yes' ? 'yes' : 'no',
+                'label' => __('Year of production', 'wristler'),
+                'description' => __('Unknown production year (random serial)', 'wristler')
+            ]
+        );
+
         woocommerce_wp_text_input(array(
             'id' => '_wristler_year_of_production',
             'type' => 'number',

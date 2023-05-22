@@ -46,6 +46,8 @@ const Wrislter = {
         const priceOnRequest = document.querySelector('input#_wristler_price_on_request');
         const priceContainer = document.querySelector('.wristler-sync-price-container');
         const priceField = document.querySelector('input#_wristler_price');
+        const productionYearUnknown = document.querySelector('input#_wristler_production_year_unknown');
+        const productionYear = document.querySelector('input#_wristler_year_of_production');
 
         if (!syncProductToWristler) {
             return;
@@ -58,6 +60,7 @@ const Wrislter = {
         conditionalFields.style.display = syncProductToWristler.checked ? 'block' : 'none'
         priceContainer.style.display = syncPrice.checked ? 'none' : 'block'
         priceField.parentNode.style.display = priceOnRequest.checked ? 'none' : 'block'
+        productionYear.parentNode.style.display = productionYearUnknown.checked ? 'none' : 'block'
 
         syncProductToWristler.addEventListener('change', function () {
             conditionalFields.style.display = this.checked ? 'block' : 'none'
@@ -69,6 +72,10 @@ const Wrislter = {
 
         priceOnRequest.addEventListener('change', function () {
             priceField.parentNode.style.display = priceOnRequest.checked ? 'none' : 'block'
+        });
+
+        productionYearUnknown.addEventListener('change', function () {
+            productionYear.parentNode.style.display = productionYearUnknown.checked ? 'none' : 'block'
         })
     },
 

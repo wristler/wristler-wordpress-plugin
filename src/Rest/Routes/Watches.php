@@ -65,7 +65,7 @@ class Watches extends Route
                 $yearOfProduction = 'BEFORE_1900';
             }
 
-            if (empty($yearOfProduction)) {
+            if (empty($yearOfProduction) || ( isset($meta['_wristler_production_year_unknown'][0]) && $meta['_wristler_production_year_unknown'][0] === 'yes' )) {
                 $yearOfProduction = 'UNKNOWN_RANDOM_SERIAL';
             }
 
