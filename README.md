@@ -2,8 +2,9 @@
 **Contributors:** [jponsen](https://profiles.wordpress.org/jponsen)  
 **Tags:** wordpress, wristler  
 **Requires at least:** 6.0  
-**Tested up to:** 6.1.1  
-**Stable tag:** 1.0.10  
+**Requires PHP:** >= 8.0  
+**Tested up to:** 6.2.1  
+**Stable tag:** 1.1.0  
 **License:** MIT  
 **License URI:** https://opensource.org/licenses/MIT  
 
