@@ -31,11 +31,14 @@ class Watches extends Route
 
             $product = wc_get_product($watch);
 
-            $price = isset($meta['_wristler_sync_price'][0]) && $meta['_wristler_sync_price'][0] === 'yes'
-                ? round($product->get_price())
-                : round($meta['_wristler_price'][0]);
+            $priceOnRequest = empty($product->get_price());
+            $price = 0;
 
-            $priceOnRequest = false;
+            if(!$priceOnRequest) {
+                $price = isset($meta['_wristler_sync_price'][0]) && $meta['_wristler_sync_price'][0] === 'yes'
+                    ? round($product->get_price())
+                    : round($meta['_wristler_price'][0]);
+            }
 
             if (
                 isset($meta['_wristler_price_on_request'][0]) && $meta['_wristler_price_on_request'][0] === 'yes' &&
@@ -132,10 +135,23 @@ class Watches extends Route
                             'value' => 'yes'
                         ],
                         [
-                            'key' => '_stock',
-                            'compare' => '>=',
-                            'value' => '1'
-                        ],
+                            'relation' => 'OR',
+                            [
+                                'key' => '_stock',
+                                'compare' => '>=',
+                                'value' => '1'
+                            ],
+                            [
+                                'key' => '_backorders',
+                                'compare' => '>=',
+                                'value' => 'yes'
+                            ],
+                            [
+                                'key' => '_backorders',
+                                'compare' => '>=',
+                                'value' => 'notify'
+                            ],
+                        ]
                     ],
                 ]
             ],
