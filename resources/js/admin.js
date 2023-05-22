@@ -53,10 +53,6 @@ const Wrislter = {
             return;
         }
 
-        if (titleField && titleField.value.length === 0) {
-            titleField.value = document.querySelector('#title').value;
-        }
-
         conditionalFields.style.display = syncProductToWristler.checked ? 'block' : 'none'
         priceContainer.style.display = syncPrice.checked ? 'none' : 'block'
         priceField.parentNode.style.display = priceOnRequest.checked ? 'none' : 'block'

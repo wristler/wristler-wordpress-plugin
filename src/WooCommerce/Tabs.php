@@ -89,6 +89,8 @@ class Tabs
             'label' => __('Name', 'wristler'),
         ));
 
+        echo '<small style="margin-left: 160px;margin-top: -10px;display: block;margin-bottom: 15px;">* ' . __('Leave empty to use the default production description.', 'wristler') . '</small>';
+
         $syncPriceValue = get_post_meta(get_the_ID(), '_wristler_sync_price', true);
 
         if (empty($syncPriceValue)) {
@@ -215,9 +217,11 @@ class Tabs
         woocommerce_wp_textarea_input(array(
             'id' => '_wristler_description',
             'label' => __('Description', 'wristler'),
-            'value' => get_post_meta(get_the_ID(), 'c', true) ?: wp_strip_all_tags(get_the_content(get_the_ID())),
+            'value' => get_post_meta(get_the_ID(), '_wristler_description', true),
             'rows' => 5,
         ));
+        echo '<small style="margin-left: 160px;margin-top: -10px;display: block;margin-bottom: 15px;">* ' . __('Leave empty to use the default production description.', 'wristler') . '</small>';
+
 
         woocommerce_wp_checkbox(
             [
@@ -228,7 +232,7 @@ class Tabs
             ]
         );
 
-        echo '<small style="    margin-left: 160px;margin-top: -10px;display: block;margin-bottom: 15px;">* ' . __('When checked, this watch will not be published directly. Fill in the customization options on Wristler for this watch to be published.', 'wristler') . '</small>';
+        echo '<small style="margin-left: 160px;margin-top: -10px;display: block;margin-bottom: 15px;">* ' . __('When checked, this watch will not be published directly. Fill in the customization options on Wristler for this watch to be published.', 'wristler') . '</small>';
 
 
         echo '</div>';

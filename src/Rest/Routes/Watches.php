@@ -31,6 +31,14 @@ class Watches extends Route
 
             $product = wc_get_product($watch);
 
+            $name = !empty($meta['_wristler_name'][0])
+                ? $meta['_wristler_name'][0]
+                : get_the_title($watch->ID);
+
+            $description = !empty($meta['_wristler_description'][0])
+                ? $meta['_wristler_description'][0]
+                : wp_strip_all_tags($watch->post_content);
+
             $priceOnRequest = empty($product->get_price());
             $price = 0;
 
@@ -82,7 +90,7 @@ class Watches extends Route
                 'ID' => $watch->ID,
                 'reference' => trim($meta['_wristler_reference'][0]) ?? null,
                 'selectedReferenceUuid' => $selectedReferenceUuid,
-                'name' => $meta['_wristler_name'][0] ?? null,
+                'name' => $name,
                 'price' => $price,
                 'priceOnRequest' => $priceOnRequest,
                 'shippingCosts' => isset($meta['_wristler_shipping_costs'][0]) ? intval(round($meta['_wristler_shipping_costs'][0])) : null,
@@ -93,7 +101,7 @@ class Watches extends Route
                 'box' => isset($meta['_wristler_box'][0]) && $meta['_wristler_box'][0] === 'yes',
                 'papers' => isset($meta['_wristler_papers'][0]) && $meta['_wristler_papers'][0] === 'yes',
                 'warranty' => isset($meta['_wristler_warranty'][0]) && $meta['_wristler_warranty'][0] === 'yes',
-                'description' => $meta['_wristler_description'][0] ?? null,
+                'description' => $description,
                 'aftermarket' => isset($meta['_wristler_aftermarket'][0]) && $meta['_wristler_aftermarket'][0] === 'yes',
                 'images' => $this->getImages($watch->ID),
                 'metadata' => [
