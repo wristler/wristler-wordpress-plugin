@@ -122,8 +122,8 @@ const Wrislter = {
         watches = watches + `
             <li style="background: #f0f0f1;">
                 <a href="#" style="color: rgba(0, 0, 0, .75);" data-id="unknown">
-                    <h4>Manual reference</h4>
-                    <p>Manually create this watch. Attributes should be filled at Wristler.</p>
+                    <h4>${WRISTLER.manuallyReferenced}</h4>
+                    <p>${WRISTLER.manuallyReferencedDescription}</p>
                 </a>
             </li>
         `;
@@ -164,7 +164,14 @@ const Wrislter = {
             selectedWatchContainer.style.display = 'block';
             selectedWatchInput.value = 'unknown';
 
-            document.querySelector('.wristler-selected-watch').style.display = 'none';
+            document.querySelector('.wristler-selected-watch').innerHTML = `
+                <div>
+                    <h4>${WRISTLER.manuallyReferenced}</h4>
+                    <p>${WRISTLER.manuallyReferencedDescription}</p>
+                </div>
+            `;
+
+            document.querySelector('.wristler-selected-watch').style.display = 'block';
 
             return;
         }

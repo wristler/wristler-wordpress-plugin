@@ -200,7 +200,6 @@ msgstr "Dit horloge is gesynchroniseerd met Wristler zonder prijs synchronisatie
 msgid "Price on request"
 msgstr "Prijs op aanvraag"
 
-#: src/WooCommerce/Tabs.php:92
 #: src/WooCommerce/Tabs.php:223
 msgid "Leave empty to use the default production description."
 msgstr "Laat leeg om de standaard product omschrijving te gebruiken."
@@ -209,7 +208,15 @@ msgstr "Laat leeg om de standaard product omschrijving te gebruiken."
 msgid "Unknown production year (random serial)"
 msgstr "Productiejaar onbekend (willekeurig serienummer)"
 
-#: 
+#: src/WooCommerce/Tabs.php:92
 msgid "Leave empty to use the title specified in WordPress"
 msgstr "Laat leeg om de standaard product titel te gebruiken"
+
+#: src/Assets.php:20
+msgid "Manual reference"
+msgstr "Handmatig invoeren"
+
+#: src/Assets.php:21
+msgid "Manually create this watch. Attributes should be filled at Wristler."
+msgstr "Handmatig horloge invoeren. Kenmerken dienen op Wristler ingevuld te worden."
 

@@ -17,6 +17,8 @@ class Assets
 
         wp_localize_script('wristler-admin-js', 'WRISTLER', [
             'selectedWatch' => __('Selected watch', 'wristler'),
+            'manuallyReferenced' => __('Manual reference', 'wristler'),
+            'manuallyReferencedDescription' => __('Manually create this watch. Attributes should be filled at Wristler.', 'wristler'),
         ]);
 
         wp_enqueue_script('wristler-admin-js');
