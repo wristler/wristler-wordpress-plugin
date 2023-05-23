@@ -150,6 +150,7 @@ const Wrislter = {
                 event.target.closest('a').classList.add('is-active');
 
                 curObj.selectWatch(event.target.closest('a').dataset.id)
+                document.querySelector('#wristler-autocomplete-results').innerHTML = '';
             })
         })
     },
