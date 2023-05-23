@@ -111,7 +111,8 @@ const Wrislter = {
             return `
                 <li>
                     <a data-id="${watch.id}" href="#">
-                        <h4>${watch.name} <small>${watch.reference}</small></h4>
+                        <h4>${watch.title} <small>${watch.reference}</small></h4>
+                        ${watch.name && watch.name.length > 0 ? `<p>${watch.name}</p>` : ''}
                         <p>${watch.tagLine}</p>
                     </a>
                 </li>
@@ -183,7 +184,8 @@ const Wrislter = {
             document.querySelector('.wristler-selected-watch').innerHTML = `
                 <div>
                     <h3>${WRISTLER.selectedWatch}</h3>
-                    <h4>${this.selectedWatch.name} <small>${this.selectedWatch.reference}</small></h4>
+                    <h4>${this.selectedWatch.title} <small>${this.selectedWatch.reference}</small></h4>
+                    ${this.selectedWatch.name && this.selectedWatch.name.length > 0 ? `<p>${this.selectedWatch.name}</p>` : ''}
                     <p>${this.selectedWatch.tagLine}</p>
                 </div>
             `;
@@ -217,7 +219,8 @@ const Wrislter = {
         return {
             id: watch.uuid,
             reference: watch.reference,
-            name: `${watch.brand} ${watch.model}`,
+            title: `${watch.brand} ${watch.model}`,
+            name: watch.name,
             tagLine: tags.join(' / ')
         }
     },

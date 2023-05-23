@@ -39,7 +39,7 @@
 }
 
 #wristler-autocomplete-results li a h4 {
-    margin: 0;
+    margin: 0 0 5px 0;
 }
 
 #wristler-autocomplete-results li a h4 small {
@@ -76,6 +76,10 @@
 .wristler-selected-watch-container > div p {
     padding: 0 !important;
     margin: 0 !important;
+}
+
+.wristler-selected-watch-container > div h4 {
+    margin-bottom: 5px !important;
 }
 
 .wristler-selected-watch-container > div h3 {
