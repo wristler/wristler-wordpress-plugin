@@ -8,6 +8,7 @@ class Processor
     public function __construct()
     {
         add_action('woocommerce_process_product_meta_simple', [$this, 'processFields']);
+        add_action('woocommerce_process_product_meta_external', [$this, 'processFields']);
     }
 
     public function processFields($postId)
