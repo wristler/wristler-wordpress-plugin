@@ -29,7 +29,7 @@ class Tabs
             'label' => __('Wristler', 'wristler'),
             'target' => 'wristler_product_data',
             'priority' => 80,
-            'class' => ['show_if_simple'],
+            'class' => ['show_if_simple', 'show_if_external'],
         ];
 
         return $tabs;
@@ -46,7 +46,7 @@ class Tabs
             [
                 'id' => '_wristler_sync',
                 'value' => get_post_meta(get_the_ID(), '_wristler_sync', true) === 'yes' ? 'yes' : 'no',
-                'wrapper_class' => 'show_if_simple',
+                'wrapper_class' => 'show_if_simple show_if_external',
                 'label' => __('Synchronization', 'wristler'),
                 'description' => __('Publish this watch on Wristler', 'wristler')
             ]
@@ -101,7 +101,7 @@ class Tabs
             [
                 'id' => '_wristler_sync_price',
                 'value' => $syncPriceValue === 'yes' ? 'yes' : 'no',
-                'wrapper_class' => 'show_if_simple',
+                'wrapper_class' => 'show_if_simple show_if_external',
                 'label' => __('Synchronize price', 'wristler'),
                 'description' => __('Synchronize product price with Wristler', 'wristler')
             ]
@@ -115,7 +115,7 @@ class Tabs
             [
                 'id' => '_wristler_price_on_request',
                 'value' => $priceOnRequest === 'yes' ? 'yes' : 'no',
-                'wrapper_class' => 'show_if_simple',
+                'wrapper_class' => 'show_if_simple show_if_external',
                 'label' => __('Price on request', 'wristler'),
                 'description' => __('Price on request', 'wristler')
             ]
