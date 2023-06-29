@@ -4,6 +4,7 @@ namespace Wristler\Rest\Routes;
 
 use WP_REST_Request as Request;
 use Wristler\Rest\Route;
+use Wristler\Wristler;
 
 class Information extends Route
 {
@@ -32,6 +33,7 @@ class Information extends Route
                 'wordpress' => get_bloginfo('version'),
                 'php' => phpversion(),
                 'woocommerce' => WC()->version,
+                'plugin' => Wristler::VERSION,
             ],
             'limits' => [
                 'memory_limit' => ini_get('memory_limit'),
