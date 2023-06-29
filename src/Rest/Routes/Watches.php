@@ -56,6 +56,10 @@ class Watches extends Route
                 $price = 0;
             }
 
+            $shippingCosts = !empty($meta['_wristler_shipping_costs'][0]) && is_numeric($meta['_wristler_shipping_costs'][0])
+                ? $meta['_wristler_shipping_costs'][0]
+                : null;
+
             $selectedReferenceUuid = isset($meta['_wristler_selected_id'][0]) && $meta['_wristler_selected_id'][0] !== 'unknown'
                 ? $meta['_wristler_selected_id'][0]
                 : null;
@@ -93,7 +97,7 @@ class Watches extends Route
                 'name' => $name,
                 'price' => $price,
                 'priceOnRequest' => $priceOnRequest,
-                'shippingCosts' => isset($meta['_wristler_shipping_costs'][0]) ? intval(round($meta['_wristler_shipping_costs'][0])) : null,
+                'shippingCosts' => $shippingCosts,
                 'state' => $meta['_wristler_state'][0] ?? null,
                 'condition' => $meta['_wristler_condition'][0] ?? null,
                 'availability' => $availability,
