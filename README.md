@@ -3,8 +3,8 @@
 **Tags:** wordpress, wristler  
 **Requires at least:** 6.0  
 **Requires PHP:** >= 7.4   
-**Tested up to:** 6.2.1  
-**Stable tag:** 1.1.1  
+**Tested up to:** 6.2.2  
+**Stable tag:** 1.1.2  
 **License:** MIT  
 **License URI:** https://opensource.org/licenses/MIT  
 
