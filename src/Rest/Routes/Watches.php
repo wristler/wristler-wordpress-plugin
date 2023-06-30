@@ -58,7 +58,7 @@ class Watches extends Route
 
             $shippingCosts = !empty($meta['_wristler_shipping_costs'][0]) && is_numeric($meta['_wristler_shipping_costs'][0])
                 ? $meta['_wristler_shipping_costs'][0]
-                : null;
+                : 0;
 
             $selectedReferenceUuid = isset($meta['_wristler_selected_id'][0]) && $meta['_wristler_selected_id'][0] !== 'unknown'
                 ? $meta['_wristler_selected_id'][0]

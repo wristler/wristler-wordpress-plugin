@@ -31,7 +31,7 @@ if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
 class Wristler
 {
 
-    const VERSION = '1.1.2';
+    const VERSION = '1.1.3';
 
     protected static $instance;
 
