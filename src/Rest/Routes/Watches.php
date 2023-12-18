@@ -105,7 +105,7 @@ class Watches extends Route
                 'box' => isset($meta['_wristler_box'][0]) && $meta['_wristler_box'][0] === 'yes',
                 'papers' => isset($meta['_wristler_papers'][0]) && $meta['_wristler_papers'][0] === 'yes',
                 'warranty' => isset($meta['_wristler_warranty'][0]) && $meta['_wristler_warranty'][0] === 'yes',
-                'description' => preg_replace('#\[[^\]]+\]#', '', wp_strip_all_tags($description)),
+                'description' => trim(preg_replace('#\[[^\]]+\]#', '', wp_strip_all_tags($description))),
                 'aftermarket' => isset($meta['_wristler_aftermarket'][0]) && $meta['_wristler_aftermarket'][0] === 'yes',
                 'images' => $this->getImages($watch->ID),
                 'metadata' => [
