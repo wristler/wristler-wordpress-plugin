@@ -23,6 +23,18 @@ class WooCommerce
 
             return $integrations;
         });
+
+        add_action('woocommerce_product_duplicate', function ($product) {
+            $meta = array_filter(get_post_meta($product->get_id()), function($key) {
+                return str_starts_with($key, '_wristler_');
+            }, ARRAY_FILTER_USE_KEY);
+
+            $meta = array_keys($meta);
+
+            foreach($meta as $key) {
+                delete_post_meta($product->get_id(), $key);
+            }
+        }, 10);
     }
 
 
