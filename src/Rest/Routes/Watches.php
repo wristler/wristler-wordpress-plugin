@@ -26,7 +26,9 @@ class Watches extends Route
 
     public function watches(): array
     {
-        return array_filter(array_map(function ($watch) {
+        $options = get_option('woocommerce_wristler_settings');
+
+        return array_filter(array_map(function ($watch) use($options) {
             $meta = get_post_meta($watch->ID);
 
             $product = wc_get_product($watch);
@@ -35,9 +37,13 @@ class Watches extends Route
                 ? $meta['_wristler_name'][0]
                 : get_the_title($watch->ID);
 
-            $description = !empty($meta['_wristler_description'][0])
-                ? $meta['_wristler_description'][0]
-                : $watch->post_content;
+            if(isset($options['wristler_force_default_description']) && $options['wristler_force_default_description'] === 'yes') {
+                $description = $name;
+            } else {
+                $description = !empty($meta['_wristler_description'][0])
+                    ? $meta['_wristler_description'][0]
+                    : $name;
+            }
 
             $priceOnRequest = empty($product->get_price());
             $price = 0;
