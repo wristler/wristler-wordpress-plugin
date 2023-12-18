@@ -205,10 +205,16 @@ class Tabs
             ]
         );
 
+        if(empty(get_post_meta(get_the_ID(), '_wristler_warranty', true))) {
+            $warranty = 'yes';
+        } else {
+            $warranty = get_post_meta(get_the_ID(), '_wristler_warranty', true) === 'yes' ? 'yes' : 'no';
+        }
+
         woocommerce_wp_checkbox(
             [
                 'id' => '_wristler_warranty',
-                'value' => get_post_meta(get_the_ID(), '_wristler_warranty', true) === 'yes' ? 'yes' : 'no',
+                'value' => $warranty,
                 'label' => __('Warranty', 'wristler'),
                 'description' => __('Includes warranty', 'wristler')
             ]
