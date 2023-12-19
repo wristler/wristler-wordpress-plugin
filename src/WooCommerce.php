@@ -2,6 +2,7 @@
 
 namespace Wristler;
 
+use Wristler\WooCommerce\Columns;
 use Wristler\WooCommerce\Integration;
 use Wristler\WooCommerce\Processor;
 use Wristler\WooCommerce\Tabs;
@@ -13,10 +14,13 @@ class WooCommerce
 
     protected $processor;
 
+    protected $columns;
+
     public function __construct()
     {
         $this->tabs = new Tabs();
         $this->processor = new Processor();
+        $this->columns = new Columns();
 
         add_filter('woocommerce_integrations', function ($integrations) {
             $integrations[] = new Integration();
