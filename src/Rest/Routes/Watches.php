@@ -202,11 +202,13 @@ class Watches extends Route
             $gallery = [];
         }
 
-        return array_filter([
+        return array_map(function($url) {
+            return apply_filters('wristler_image_url', $url);
+        }, array_filter([
             $featuredImage[0] ?? null,
             ...array_map(function ($image) {
                 return wp_get_attachment_url($image);
             }, $gallery),
-        ]);
+        ]));
     }
 }
