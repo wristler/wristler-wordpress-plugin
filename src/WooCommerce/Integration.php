@@ -54,6 +54,67 @@ class Integration extends \WC_Integration
                 'description' => __('When enabled, the description entered in the product settings will be ignored. The product name will be used as description.', 'wristler'),
                 'desc_tip' => true,
             ),
+            'wristler_spacer' => [
+                'title' => __('Default attributes'),
+                'type' => 'hidden',
+            ],
+            'wristler_attribute_state' => array(
+                'title' => __('State', 'wristler'),
+                'type' => 'select',
+                'options' => [
+                    'NEW_UNWORN' => __('New/unworn', 'wristler'),
+                    'PRE_OWNED' => __('Pre-owned', 'wristler'),
+                ],
+                'default' => 'NEW_UNWORN',
+            ),
+            'wristler_attribute_condition' => array(
+                'title' => __('Condition', 'wristler'),
+                'type' => 'select',
+                'options' => [
+                    'NEW' => __('New', 'wristler'),
+                    'UNWORN' => __('Unworn', 'wristler'),
+                    'VERY_GOOD' => __('Very good', 'wristler'),
+                    'GOOD' => __('Good', 'wristler'),
+                    'FAIR' => __('Fair', 'wristler'),
+                    'POOR' => __('Poor', 'wristler'),
+                    'INCOMPLETE' => __('Incomplete', 'wristler'),
+                ],
+                'default' => 'NEW',
+            ),
+            'wristler_attribute_availability' => array(
+                'title' => __('Availability', 'wristler'),
+                'type' => 'select',
+                'options' => [
+                    'READY_TO_SHIP_IN_1_3_DAYS' => __('Ready to ship in 1-3 days', 'wristler'),
+                    'READY_TO_SHIP_IN_3_5_DAYS' => __('Ready to ship in 3-5 days', 'wristler'),
+                    'READY_TO_SHIP_IN_6_10_DAYS' => __('Ready to ship in 6-10 days', 'wristler'),
+                    'ON_REQUEST' => __('On request', 'wristler'),
+                ],
+                'default' => 'READY_TO_SHIP_IN_1_3_DAYS',
+            ),
+
+            'wristler_attribute_shipping_costs' => array(
+                'title' => __('Shipping costs', 'wristler'),
+                'type' => 'number',
+            ),
+            'wristler_attribute_includes_box' => array(
+                'title' => __('Including box', 'wristler'),
+                'type' => 'select',
+                'options' => [
+                    'no' => __('No', 'wristler'),
+                    'yes' => __('Yes', 'wristler'),
+                ],
+                'default' => 'no',
+            ),
+            'wristler_attribute_includes_papers' => array(
+                'title' => __('Including papers', 'wristler'),
+                'type' => 'select',
+                'options' => [
+                    'no' => __('No', 'wristler'),
+                    'yes' => __('Yes', 'wristler'),
+                ],
+                'default' => 'no',
+            ),
         );
     }
 

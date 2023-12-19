@@ -130,14 +130,14 @@ class Tabs
 
         woocommerce_wp_text_input(array(
             'id' => '_wristler_shipping_costs',
-            'value' => get_post_meta(get_the_ID(), '_wristler_shipping_costs', true),
+            'value' => get_post_meta(get_the_ID(), '_wristler_shipping_costs', true) ?: $this->options['wristler_attribute_shipping_costs'] ?? '',
             'label' => __('Shipping costs', 'wristler'),
         ));
 
         woocommerce_wp_select([
             'id' => '_wristler_state',
             'label' => __('State', 'wristler'),
-            'value' => get_post_meta(get_the_ID(), '_wristler_state', true),
+            'value' => get_post_meta(get_the_ID(), '_wristler_state', true) ?: $this->options['wristler_attribute_state'] ?? '',
             'options' => [
                 'NEW_UNWORN' => __('New/unworn', 'wristler'),
                 'PRE_OWNED' => __('Pre-owned', 'wristler'),
@@ -147,7 +147,7 @@ class Tabs
         woocommerce_wp_select([
             'id' => '_wristler_condition',
             'label' => __('Condition', 'wristler'),
-            'value' => get_post_meta(get_the_ID(), '_wristler_condition', true),
+            'value' => get_post_meta(get_the_ID(), '_wristler_condition', true) ?: $this->options['wristler_attribute_condition'] ?? '',
             'options' => [
                 'NEW' => __('New', 'wristler'),
                 'UNWORN' => __('Unworn', 'wristler'),
@@ -162,7 +162,7 @@ class Tabs
         woocommerce_wp_select([
             'id' => '_wristler_availability',
             'label' => __('Availability', 'wristler'),
-            'value' => get_post_meta(get_the_ID(), '_wristler_availability', true),
+            'value' => get_post_meta(get_the_ID(), '_wristler_availability', true) ?: $this->options['wristler_attribute_availability'] ?? '',
             'options' => [
                 'READY_TO_SHIP_IN_1_3_DAYS' => __('Ready to ship in 1-3 days', 'wristler'),
                 'READY_TO_SHIP_IN_3_5_DAYS' => __('Ready to ship in 3-5 days', 'wristler'),
@@ -187,29 +187,35 @@ class Tabs
             'label' => __('Year of production', 'wristler'),
         ));
 
+        $box = empty(get_post_meta(get_the_ID(), '_wristler_box', true))
+            ? $this->options['wristler_attribute_includes_box'] ?? ''
+            : get_post_meta(get_the_ID(), '_wristler_box', true);
+
         woocommerce_wp_checkbox(
             [
                 'id' => '_wristler_box',
-                'value' => get_post_meta(get_the_ID(), '_wristler_box', true) === 'yes' ? 'yes' : 'no',
+                'value' => $box,
                 'label' => __('Box', 'wristler'),
                 'description' => __('Includes original box', 'wristler')
             ]
         );
 
+        $papers = empty(get_post_meta(get_the_ID(), '_wristler_papers', true))
+            ? $this->options['wristler_attribute_includes_papers'] ?? ''
+            : get_post_meta(get_the_ID(), '_wristler_papers', true);
+
         woocommerce_wp_checkbox(
             [
                 'id' => '_wristler_papers',
-                'value' => get_post_meta(get_the_ID(), '_wristler_papers', true) === 'yes' ? 'yes' : 'no',
+                'value' => $papers,
                 'label' => __('Papers', 'wristler'),
                 'description' => __('Includes papers/certificate', 'wristler')
             ]
         );
 
-        if(empty(get_post_meta(get_the_ID(), '_wristler_warranty', true))) {
-            $warranty = 'yes';
-        } else {
-            $warranty = get_post_meta(get_the_ID(), '_wristler_warranty', true) === 'yes' ? 'yes' : 'no';
-        }
+        $warranty = get_post_meta(get_the_ID(), '_wristler_warranty', true)
+            ? 'yes'
+            : get_post_meta(get_the_ID(), '_wristler_warranty', true);
 
         woocommerce_wp_checkbox(
             [
@@ -256,5 +262,5 @@ class Tabs
             echo '<div class="wristler-warning">' . __('This watch is synchronized with Wristler without price synchronization. Check the price with the Wristler options before updating.', 'wristler') . '</div>';
         }
     }
-
+    
 }
