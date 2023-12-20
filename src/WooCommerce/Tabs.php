@@ -213,9 +213,9 @@ class Tabs
             ]
         );
 
-        $warranty = get_post_meta(get_the_ID(), '_wristler_warranty', true)
+        $warranty = empty(get_post_meta(get_the_ID(), '_wristler_warranty', true))
             ? 'yes'
-            : get_post_meta(get_the_ID(), '_wristler_warranty', true);
+            : get_post_meta(get_the_ID(), '_wristler_papers', true);
 
         woocommerce_wp_checkbox(
             [
