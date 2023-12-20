@@ -6,7 +6,7 @@
   "last_updated": "2023-06-30 06:20:36",
   "download_url": "https://github.com/wristler/wristler-wordpress-plugin/releases/download/v1.1.3/wristler.zip",
   "requires": "6.0",
-  "tested": "6.1.1",
+  "tested": "6.4.2",
   "requires_php": "7.4",
   "sections": {
     "description": "This plug-in enables additional fields in WooCommerce for synchronization with Wristler.",
