@@ -42,7 +42,11 @@ class Watches extends Route
             } else {
                 $description = !empty($meta['_wristler_description'][0])
                     ? $meta['_wristler_description'][0]
-                    : $name;
+                    : $watch->post_content;
+
+                if(empty($description)) {
+                    $description = $name;
+                }
             }
 
             $priceOnRequest = empty($product->get_price());
@@ -95,6 +99,8 @@ class Watches extends Route
             if (count($images) === 0) {
                 return [];
             }
+
+            //                 'description' => trim(preg_replace('#\[[^\]]+\]#', '', wp_strip_all_tags($description))),
 
             return [
                 'ID' => $watch->ID,
