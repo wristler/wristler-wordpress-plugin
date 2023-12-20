@@ -23,7 +23,7 @@ class Columns
         );
 
         if ('wristler_status' === $column_name) {
-            echo '<div style="display: flex; align-items: center;height:100%;"><span style="display: block;background:' . $status['color'] . ';border-radius: 12px;width:12px;height:12px;margin-right:5px;"></span> ' . $status['label'] . '</div>';
+            echo '<div style="display: flex; align-items: center;height:100%;"><span style="display: block;background:' . $status['color'] . ';border-radius: 12px;width:12px;height:12px;margin-right:5px;flex-shrink: 0;"></span> ' . $status['label'] . '</div>';
         }
     }
 
