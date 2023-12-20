@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the Wristler plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Wristler 1.1.0\n"
+"Project-Id-Version: Wristler 1.1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wristler\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-05-23T13:44:10+00:00\n"
+"POT-Creation-Date: 2023-12-20T10:23:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.7.1\n"
+"X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: wristler\n"
 
 #. Plugin Name of the plugin
@@ -43,6 +43,20 @@ msgstr ""
 msgid "Manually create this watch. Attributes should be filled at Wristler."
 msgstr ""
 
+#: src/WooCommerce/Columns.php:56
+msgid "Inactive"
+msgstr ""
+
+#: src/WooCommerce/Columns.php:60
+#: src/WooCommerce/Integration.php:80
+#: src/WooCommerce/Tabs.php:158
+msgid "Incomplete"
+msgstr ""
+
+#: src/WooCommerce/Columns.php:64
+msgid "Active"
+msgstr ""
+
 #: src/WooCommerce/Integration.php:14
 msgid "Fill in your Wristler Security Token in order for the plugin to work."
 msgstr ""
@@ -57,6 +71,112 @@ msgstr ""
 
 #: src/WooCommerce/Integration.php:46
 msgid "Enter the security token provided during installation on Wristler. Without this token the plug-in will not work."
+msgstr ""
+
+#: src/WooCommerce/Integration.php:51
+msgid "Force default description"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:54
+msgid "When enabled, the description entered in the product settings will be ignored. The product name will be used as description."
+msgstr ""
+
+#: src/WooCommerce/Integration.php:62
+#: src/WooCommerce/Tabs.php:139
+msgid "State"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:65
+#: src/WooCommerce/Tabs.php:142
+msgid "New/unworn"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:66
+#: src/WooCommerce/Tabs.php:143
+msgid "Pre-owned"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:71
+#: src/WooCommerce/Tabs.php:149
+msgid "Condition"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:74
+#: src/WooCommerce/Tabs.php:152
+msgid "New"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:75
+#: src/WooCommerce/Tabs.php:153
+msgid "Unworn"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:76
+#: src/WooCommerce/Tabs.php:154
+msgid "Very good"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:77
+#: src/WooCommerce/Tabs.php:155
+msgid "Good"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:78
+#: src/WooCommerce/Tabs.php:156
+msgid "Fair"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:79
+#: src/WooCommerce/Tabs.php:157
+msgid "Poor"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:85
+#: src/WooCommerce/Tabs.php:164
+msgid "Availability"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:88
+#: src/WooCommerce/Tabs.php:167
+msgid "Ready to ship in 1-3 days"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:89
+#: src/WooCommerce/Tabs.php:168
+msgid "Ready to ship in 3-5 days"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:90
+#: src/WooCommerce/Tabs.php:169
+msgid "Ready to ship in 6-10 days"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:91
+#: src/WooCommerce/Tabs.php:170
+msgid "On request"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:97
+#: src/WooCommerce/Tabs.php:134
+msgid "Shipping costs"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:101
+msgid "Including box"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:104
+#: src/WooCommerce/Integration.php:113
+msgid "No"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:105
+#: src/WooCommerce/Integration.php:114
+msgid "Yes"
+msgstr ""
+
+#: src/WooCommerce/Integration.php:110
+msgid "Including papers"
 msgstr ""
 
 #: src/WooCommerce/Tabs.php:50
@@ -100,74 +220,6 @@ msgstr ""
 msgid "Price"
 msgstr ""
 
-#: src/WooCommerce/Tabs.php:134
-msgid "Shipping costs"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:139
-msgid "State"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:142
-msgid "New/unworn"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:143
-msgid "Pre-owned"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:149
-msgid "Condition"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:152
-msgid "New"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:153
-msgid "Unworn"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:154
-msgid "Very good"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:155
-msgid "Good"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:156
-msgid "Fair"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:157
-msgid "Poor"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:158
-msgid "Incomplete"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:164
-msgid "Availability"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:167
-msgid "Ready to ship in 1-3 days"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:168
-msgid "Ready to ship in 3-5 days"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:169
-msgid "Ready to ship in 6-10 days"
-msgstr ""
-
-#: src/WooCommerce/Tabs.php:170
-msgid "On request"
-msgstr ""
-
 #: src/WooCommerce/Tabs.php:178
 #: src/WooCommerce/Tabs.php:187
 msgid "Year of production"
@@ -177,50 +229,50 @@ msgstr ""
 msgid "Unknown production year (random serial)"
 msgstr ""
 
-#: src/WooCommerce/Tabs.php:194
+#: src/WooCommerce/Tabs.php:198
 msgid "Box"
 msgstr ""
 
-#: src/WooCommerce/Tabs.php:195
+#: src/WooCommerce/Tabs.php:199
 msgid "Includes original box"
 msgstr ""
 
-#: src/WooCommerce/Tabs.php:203
+#: src/WooCommerce/Tabs.php:211
 msgid "Papers"
 msgstr ""
 
-#: src/WooCommerce/Tabs.php:204
+#: src/WooCommerce/Tabs.php:212
 msgid "Includes papers/certificate"
 msgstr ""
 
-#: src/WooCommerce/Tabs.php:212
+#: src/WooCommerce/Tabs.php:224
 msgid "Warranty"
 msgstr ""
 
-#: src/WooCommerce/Tabs.php:213
+#: src/WooCommerce/Tabs.php:225
 msgid "Includes warranty"
 msgstr ""
 
-#: src/WooCommerce/Tabs.php:219
+#: src/WooCommerce/Tabs.php:231
 msgid "Description"
 msgstr ""
 
-#: src/WooCommerce/Tabs.php:223
+#: src/WooCommerce/Tabs.php:235
 msgid "Leave empty to use the default production description."
 msgstr ""
 
-#: src/WooCommerce/Tabs.php:230
+#: src/WooCommerce/Tabs.php:242
 msgid "Aftermarket"
 msgstr ""
 
-#: src/WooCommerce/Tabs.php:231
+#: src/WooCommerce/Tabs.php:243
 msgid "This watch has after market customizations *"
 msgstr ""
 
-#: src/WooCommerce/Tabs.php:235
+#: src/WooCommerce/Tabs.php:247
 msgid "When checked, this watch will not be published directly. Fill in the customization options on Wristler for this watch to be published."
 msgstr ""
 
-#: src/WooCommerce/Tabs.php:250
+#: src/WooCommerce/Tabs.php:262
 msgid "This watch is synchronized with Wristler without price synchronization. Check the price with the Wristler options before updating."
 msgstr ""
