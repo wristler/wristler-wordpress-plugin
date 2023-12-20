@@ -50,12 +50,12 @@ class Integration extends \WC_Integration
             'wristler_force_default_description' => array(
                 'title' => __('Force default description', 'wristler'),
                 'type' => 'checkbox',
-                'label' => __('Force usage of default description (defaulted to watch name)'),
+                'label' => __('Force usage of default description (defaulted to watch name)', 'wristler'),
                 'description' => __('When enabled, the description entered in the product settings will be ignored. The product name will be used as description.', 'wristler'),
                 'desc_tip' => true,
             ),
             'wristler_spacer' => [
-                'title' => __('Default attributes'),
+                'title' => __('Default attributes', 'wristler'),
                 'type' => 'hidden',
             ],
             'wristler_attribute_state' => array(

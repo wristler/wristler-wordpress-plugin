@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wristler WordPress Plugin\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wristler\n"
-"POT-Creation-Date: 2023-12-20T10:23:48+00:00\n"
+"POT-Creation-Date: 2023-12-20T10:37:32+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -82,6 +82,10 @@ msgstr ""
 msgid "Force default description"
 msgstr "Forceer standaard omschrijving"
 
+#: src/WooCommerce/Integration.php:53
+msgid "Force usage of default description (defaulted to watch name)"
+msgstr "Forceer gebruik van standaard omschrijving (naam van horloge)"
+
 #: src/WooCommerce/Integration.php:54
 msgid ""
 "When enabled, the description entered in the product settings will be "
@@ -90,6 +94,10 @@ msgstr ""
 "Indien ingeschakeld, wordt de beschrijving die is ingevoerd in de "
 "productinstellingen genegeerd. De productnaam wordt gebruikt als "
 "beschrijving."
+
+#: src/WooCommerce/Integration.php:58
+msgid "Default attributes"
+msgstr "Standaard kenmerken"
 
 #: src/WooCommerce/Integration.php:62 src/WooCommerce/Tabs.php:139
 msgid "State"
