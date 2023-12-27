@@ -27,7 +27,7 @@ class Columns
         }
     }
 
-    private function determineStatus(\WC_Product|int $product): string
+    private function determineStatus($product)
     {
         if (is_int($product)) {
             $product = wc_get_product($product);
