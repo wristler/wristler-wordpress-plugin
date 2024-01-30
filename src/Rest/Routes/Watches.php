@@ -54,8 +54,14 @@ class Watches extends Route
 
             if(!$priceOnRequest) {
                 $price = isset($meta['_wristler_sync_price'][0]) && $meta['_wristler_sync_price'][0] === 'yes'
-                    ? round($product->get_price())
-                    : round($meta['_wristler_price'][0]);
+                    ? $product->get_price()
+                    : $meta['_wristler_price'][0];
+
+                if(empty($price)) {
+                    return [];
+                }
+
+                $price = round($price);
             }
 
             if (
@@ -144,6 +150,31 @@ class Watches extends Route
                     'compare' => '!=',
                     'value' => ''
                 ],
+//                [
+//                    'relation' => 'OR',
+//                    [
+//                        'key' => '_wristler_sync_price',
+//                        'compare' => '=',
+//                        'value' => 'yes'
+//                    ],
+//                    [
+//                        'relation' => 'AND',
+//                        [
+//                            'key' => '_wristler_sync_price',
+//                            'compare' => '=',
+//                            'value' => 'no'
+//                        ],
+//                        [
+//                            'key' => '_wristler_price',
+//                            'compare' => 'EXISTS',
+//                        ],
+//                        [
+//                            'key' => '_wristler_price',
+//                            'compare' => '!=',
+//                            'value' => ''
+//                        ],
+//                    ],
+//                ],
                 [
                     'relation' => 'OR',
                     [
