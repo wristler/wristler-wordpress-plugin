@@ -1,4 +1,4 @@
-const Wrislter = {
+const Wristler = {
 
     watches: [],
 
@@ -83,7 +83,7 @@ const Wrislter = {
             return;
         }
 
-        referenceInput.addEventListener('input', Wrislter.debounce(event => {
+        referenceInput.addEventListener('input', Wristler.debounce(event => {
             curObj.showLoader();
             curObj.selectedWatch = null;
             curObj.watches = [];
@@ -113,7 +113,6 @@ const Wrislter = {
                     <a data-id="${watch.id}" href="#">
                         <h4>${watch.title} <small>${watch.reference}</small></h4>
                         ${watch.name && watch.name.length > 0 ? `<p>${watch.name}</p>` : ''}
-                        <p>${watch.tagLine}</p>
                     </a>
                 </li>
             `;
@@ -193,7 +192,6 @@ const Wrislter = {
                     <h3>${WRISTLER.selectedWatch}</h3>
                     <h4>${this.selectedWatch.title} <small>${this.selectedWatch.reference}</small></h4>
                     ${this.selectedWatch.name && this.selectedWatch.name.length > 0 ? `<p>${this.selectedWatch.name}</p>` : ''}
-                    <p>${this.selectedWatch.tagLine}</p>
                 </div>
             `;
         }
@@ -219,16 +217,11 @@ const Wrislter = {
     },
 
     formatResource: function (watch) {
-        let tags = ['category', 'gender', 'movement', 'caseSize', 'dial'].map(tag => {
-            return watch[tag] && watch[tag].length > 0 ? watch[tag] : null;
-        }).filter(tag => tag !== null);
-
         return {
             id: watch.uuid,
             reference: watch.reference,
             title: `${watch.brand} ${watch.model}`,
             name: watch.name,
-            tagLine: tags.join(' / ')
         }
     },
 
@@ -243,7 +236,7 @@ const Wrislter = {
     request: function (path) {
         const token = document.querySelector('input[name="wristler_security_token"]').value;
 
-        return fetch(`https://data.wristler.eu/api/v1/${path}`, {
+        return fetch(`https://data.wristler.test/api/v1/${path}`, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -259,4 +252,4 @@ const Wrislter = {
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => Wrislter.init());
+document.addEventListener("DOMContentLoaded", () => Wristler.init());

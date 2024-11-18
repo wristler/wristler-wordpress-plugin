@@ -1,10 +1,10 @@
 # Wristler WordPress Plugin #
-**Contributors:** [jponsen](https://profiles.wordpress.org/jponsen)  
+**Contributors:** [jponsen](https://github.com/jponsen)  
 **Tags:** wordpress, wristler  
 **Requires at least:** 6.0  
 **Requires PHP:** >= 7.4   
 **Tested up to:** 6.2.2  
-**Stable tag:** 1.2.2 
+**Stable tag:** 1.3.0  
 **License:** MIT  
 **License URI:** https://opensource.org/licenses/MIT  
 
