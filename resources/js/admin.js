@@ -236,7 +236,7 @@ const Wristler = {
     request: function (path) {
         const token = document.querySelector('input[name="wristler_security_token"]').value;
 
-        return fetch(`https://data.wristler.test/api/v1/${path}`, {
+        return fetch(`https://data.wristler.eu/api/v1/${path}`, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
