@@ -87,15 +87,19 @@ const Wristler = {
             curObj.showLoader();
             curObj.selectedWatch = null;
             curObj.watches = [];
+            document.querySelector('#wristler_error_message').style.display = 'none';
 
             this.search(event.target.value).then(resp => {
-                curObj.watches = resp.data.map(watch => curObj.formatResource(watch));
+                curObj.watches = (resp.data || []).map(watch => curObj.formatResource(watch));
                 curObj.hideLoader();
                 curObj.formatResults()
-            }).catch(() => {
+            }).catch(error => {
                 curObj.hideLoader();
+                curObj.formatResults();
 
-                document.querySelector('#wristler_error_message').style.display = 'block';
+                if (curObj.isFetchError(error)) {
+                    document.querySelector('#wristler_error_message').style.display = 'block';
+                }
             })
         }, 250))
     },
@@ -223,6 +227,12 @@ const Wristler = {
             title: `${watch.brand} ${watch.model}`,
             name: watch.name,
         }
+    },
+
+    isFetchError: function (error) {
+        const status = parseInt(error && error.message, 10);
+
+        return isNaN(status) || status !== 404;
     },
 
     search: function (query) {
