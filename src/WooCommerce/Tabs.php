@@ -232,7 +232,7 @@ class Tabs
             'value' => get_post_meta(get_the_ID(), '_wristler_description', true),
             'rows' => 5,
         ));
-        echo '<small style="margin-left: 160px;margin-top: -10px;display: block;margin-bottom: 15px;">* ' . __('Leave empty to use the default production description.', 'wristler') . '</small>';
+        echo '<small style="margin-left: 160px;margin-top: -10px;display: block;margin-bottom: 15px;">* ' . __('Leave empty to use the default product description.', 'wristler') . '</small>';
 
 
         woocommerce_wp_checkbox(
